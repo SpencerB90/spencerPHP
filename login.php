@@ -14,7 +14,7 @@ $password = $_POST['password'];
   <body>
     <form method="post" action="">
       <input type="text" name="username" placeholder="enter username"> <br />
-      <input type="password" name="Password" >
+      <input type="password" name="password" >
       <br>
       <input type="submit" value="go">
     </form>
