@@ -19,7 +19,7 @@ $password = $_POST['password'];
     </form>
 
 <?php
-if (isset($username) || (isset($password))) {
+if (isset($username) || isset($password)) {
   echo "username was " + $username;
   echo "<br>";
   echo "password was" + $password;
