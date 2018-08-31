@@ -19,11 +19,13 @@ $password = $_POST['password'];
     </form>
 
 <?php
-if (isset($username) || isset($password)) {
-  echo "username was " + $username;
-  echo "<br>";
-  echo "password was" + $password;
+if (isset($username) && isset($password)) {
+  if ($username == "spencer" && $password == "password"){
+    $_SESSION['username'] = $username;
+  }
 }
+
+echo "Logged in as: " . $_SESSION['username'];
 
  ?>
 
