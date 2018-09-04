@@ -9,6 +9,10 @@
 <?php
 $username = $_POST['username'];
 $password = $_POST['password'];
+
+if(isset($_POST['logout'])) {
+  unset()$_SESSION['username']);
+}
  ?>
 
   <body>
@@ -17,6 +21,9 @@ $password = $_POST['password'];
       <input type="password" name="password" >
       <br>
       <input type="submit" value="go">
+      <br>
+      <input type="submit" name="logout" value="logout">
+
     </form>
 
 <?php
