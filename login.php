@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php
+session_start()
+require('dbconnect.php');
+
+ ?>
+ 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
