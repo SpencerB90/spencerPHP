@@ -16,7 +16,7 @@ if (isset($_POST['username'])){
   while ($row as $result ->fetch_assoc()){
     // $row['username'] is value from database
     //username & password is the field name in database, use same name and capitlazation
-    if ($username ==$row['username'] && $password ==$row['password']){
+    if ($username == $row['username'] && $password == $row['password']){
       $_SESSION['username'] = $username;
     }
 
