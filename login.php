@@ -1,12 +1,27 @@
 <?php
 session_start();
 require('dbConnect.php');
+//can connect after not before, code goes line by line
 
 if (isset($_POST['username'])){
   $username = $_POST['username'];
   $password = $_POST['password'];
 
+  //SQL statement to execute
   $sql = "SELECT username, password FROM users where username = $username";
+  //execute sql and return the array to $result
+  $result = $conn->query($sql);
+
+  //extracting the returned query information
+  while ($row as $result ->fetch_assoc()){
+    // $row['username'] is value from database
+    //username & password is the field name in database, use same name and capitlazation
+    if ($username ==$row['username'] && $password ==$row['password']){
+      $_SESSION['username'] = $username;
+    }
+
+  }
+
 }
  ?>
 
@@ -36,14 +51,7 @@ if(isset($_POST['logout'])) {
     </form>
 
 <?php
-if (isset($username) && isset($password)) {
-  if ($username == "spencer" && $password == "password"){
-    $_SESSION['username'] = $username;
-  }
-}
-
 echo "Logged in as: " . $_SESSION['username'];
-
  ?>
 
   </body>
