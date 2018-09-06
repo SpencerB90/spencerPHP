@@ -13,7 +13,7 @@ if (isset($_POST['username'])){
   $result = $conn->query($sql);
 
   //extracting the returned query information
-  while ($row as $result->fetch_assoc()){
+  while ($row = $result->fetch_assoc()){
     // $row['username'] is value from database
     //username & password is the field name in database, use same name and capitlazation
     if ($username == $row['username'] && $password == $row['password']){
