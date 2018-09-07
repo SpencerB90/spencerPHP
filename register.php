@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <body>
 
     <form method="post" action="" >
-      <input type="text" name="username"><br>
-      <input type="password" name="password"><br>
+      username:<input type="text" name="username"><br>
+      password:<input type="password" name="password"><br>
       <input type="sumbit">
     </form>
 
