@@ -7,8 +7,8 @@ if (isset($_POST['username'])){
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  //SQL statement to execute
-  $sql = "SELECT username, password FROM users where username = $username";
+  //SQL statement to execute. surround variables with single qoates
+  $sql = "SELECT username, password FROM users where username = '$username'";
   //execute sql and return the array to $result
   $result = $conn->query($sql);
 
