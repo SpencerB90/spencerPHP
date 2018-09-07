@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="post" action="" >
       username:<input type="text" name="username"><br>
       password:<input type="password" name="password"><br>
-      <input type="sumbit">
+      <input type="submit">
     </form>
 
   </body>
