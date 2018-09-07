@@ -18,11 +18,11 @@ if (isset($_POST['username'])){
     //username & password is the field name in database, use same name and capitalization
     if ($username == $row['username'] && $password == $row['password']){
       $_SESSION['username'] = $username;
-    }
+    } //closes if statement
 
-  }
+  } //closes while loop
 
-}
+}// closes POST condition
  ?>
 
 <!DOCTYPE html>
