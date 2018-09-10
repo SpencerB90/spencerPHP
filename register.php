@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   //MD5 instentanious, bad for security - "rainbow table" = hashed guesses
   //hash is : takes password through algorythem and brings back a hash
   // impossible to reverse! good for security - BCRYPT "salts passwords"
-  $password = password_hash($password, PASSWORD_BCRYPT)
+  $password = password_hash($password, PASSWORD_BCRYPT);
   $sql = "INSERT INTO users (username,password) VALUES ('$username','$password')";
   $conn->query($sql);
 }
