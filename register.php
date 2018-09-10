@@ -4,6 +4,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   require('dbConnect.php');
   $username = $_POST['username'];
   $password = $_POST['password'];
+
+  // password hash wont work on red hat till new version
+  //MD5 instentanious, bad for security - "rainbow table" = hashed guesses
+  //hash is : takes password through algorythem and brings back a hash
+  // impossible to reverse! good for security - BCRYPT "salts passwords"
+  $password = password_hash($password, PASSWORD_BCRYPT)
   $sql = "INSERT INTO users (username,password) VALUES ('$username','$password')";
   $conn->query($sql);
 }
