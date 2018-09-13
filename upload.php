@@ -16,6 +16,8 @@ var_dump($_FILES['upload']);
 echo"<hr />";
 var_dump($_POST['upload']); //trouble shooting wrong statement
 
+//use ctrl / to auto comment by line
+
 //code for uploading file, will work after post data is sent
 if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
   $target_dir = "uploads/";
