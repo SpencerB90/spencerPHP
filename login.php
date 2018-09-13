@@ -40,6 +40,14 @@ if(isset($_POST['logout'])) {
  ?>
 
   <body>
+
+    <a href = "register.php">Register</a>
+    if (isset($_SESSION['username'])) {
+     <a href = "upload.php"> | Upload </a>
+   }
+    <br />
+
+
     <form method="post" action="">
       <input type="text" name="username" placeholder="enter username"> <br />
       <input type="password" name="password" >
