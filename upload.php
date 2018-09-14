@@ -28,7 +28,7 @@ $uploadVerify = true;
 //lets check to see if the file already exists
 if (file_exists($target_file)) {
   $uploadVerify = false;
-  $ret = "Sorry file already exists"
+  $ret = "Sorry file already exists";
 }
 
 //if set value has value can be used as true w/o conditions
@@ -54,4 +54,4 @@ if ($uploadVerify) {
 
  <h5 style="color:red;">
    <?php if ($ret) { echo $ret; } ?>
-  </h5>
+</h5>
