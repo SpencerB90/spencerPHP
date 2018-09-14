@@ -22,8 +22,20 @@ var_dump($_POST['upload']); //trouble shooting wrong statement
 if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
   $target_dir = "uploads/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
+
+$uploadVerify = true;
+
+//lets check to see if the file already exists
+if (file_exists($target_file)) {
+  $uploadVerify = false;
+  $ret = "Sorry file already exists"
+}
+
+//if set value has value can be used as true w/o conditions
+if ($uploadVerify) {
   //moves files
-  move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file);
+    move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file);
+}
 
 }
 
@@ -40,3 +52,7 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
  <input type="submit">
 
  </form>
+
+ <h5 style="color:red;">
+   <?php if ($ret) { echo $ret; } ?>
+  </h5>
