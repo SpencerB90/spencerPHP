@@ -26,9 +26,17 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
 $uploadVerify = true;
 
 //lets check to see if the file already exists
+
+//variables are global
 if (file_exists($target_file)) {
   $uploadVerify = false;
   $ret = "Sorry file already exists";
+}
+
+//php has file upload limit of 2mb by default
+if ($_FILES['upload']['size'] > 2000000 ) {
+  $uploadVerify = false;
+  $ret = "Sorry file too big";
 }
 
 //if set value has value can be used as true w/o conditions
