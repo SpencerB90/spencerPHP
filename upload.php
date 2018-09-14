@@ -36,7 +36,6 @@ if ($uploadVerify) {
   //moves files
     move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file);
 }
-
 }
 
 
