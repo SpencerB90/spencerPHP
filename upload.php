@@ -14,6 +14,7 @@ if (!isset($_SESSION['username'])) {
 var_dump($_FILES['upload']);
 
 echo"<hr />";
+//post could have been changed from php 5 to 7
 var_dump($_POST['upload']); //trouble shooting wrong statement
 
 //use ctrl / to auto comment by line
@@ -33,8 +34,35 @@ if (file_exists($target_file)) {
   $ret = "Sorry file already exists";
 }
 
+//check file for type
+$file_type = $_FILES['upload']['type'];
+
+switch ($file_type) {
+  case 'image/jpeg':
+    $uploadVerify = true;
+    break;
+
+  case 'image/png':
+    $uploadVerify = true;
+    break;
+
+  case 'image/gif':
+    $uploadVerify = true;
+    break;
+
+  case 'application/pdf':
+    $uploadVerify = true;
+    break;
+
+  default:
+    $uploadVerify = false;
+    $ret = "sorry only jpeg, gif, png, and pdf files allowed";
+    break;
+}
+
+
 //php has file upload limit of 2mb by default
-if ($_FILES['upload']['size'] > 2000000 ) {
+if ($_FILES['upload']['size'] > 1000000 ) {
   $uploadVerify = false;
   $ret = "Sorry file too big";
 }
