@@ -21,6 +21,12 @@ var_dump($_POST['upload']); //trouble shooting wrong statement
 
 //code for uploading file, will work after post data is sent
 if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
+  //check to if uploads folder exists
+  if (!file_exists("uploads")){
+    //if uploads folder(directory) dose not exist create it
+    mkdir("uploads/");
+  }
+
   $target_dir = "uploads/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
 
