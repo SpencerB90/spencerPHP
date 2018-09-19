@@ -28,7 +28,7 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
   }
 
   //creates file for individual user
-  if (!file_exists(("uploads/" . $_SESSION['username']))) {
+  if (!file_exists("uploads/" . $_SESSION['username'])) {
     mkdir("uploads/" . "$_SESSION['username']");
   }
 
