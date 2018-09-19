@@ -24,7 +24,11 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
   //check to if uploads folder exists
   if (!file_exists("uploads")){
     //if uploads folder(directory) dose not exist create it
-    mkdir("uploads/");
+    mkdir("./uploads/");
+  }
+
+  if (!file_exists(("uploads/" . $_SESSION['username']))) {
+    mkdir("./uploads/" . "$_SESSION['username']");
   }
 
   $target_dir = "uploads/";
