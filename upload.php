@@ -27,9 +27,9 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
     mkdir("uploads/");
   }
 
-  //creates file for individual user
+  //creates file for individual user, 0777 permissions, true = recursive to create file path
   if (!file_exists("uploads/" . $_SESSION['username'])) {
-    mkdir("uploads/" . $_SESSION['username']);
+    mkdir("uploads/" . $_SESSION['username'], 0777,true);
   }
 
   $target_dir = "uploads/" . $_SESSION['username'] . "/";
