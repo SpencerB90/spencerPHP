@@ -13,7 +13,7 @@ if (!isset($_SESSION['username'])) {
 require('dbConnect.php');
 
 //create the sql Query
-$sql = "SELECT * from users;"
+$sql = "SELECT * from users;";
 
 //exacute the sql query
 $result = $conn->query($sql);
