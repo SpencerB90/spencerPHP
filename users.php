@@ -36,7 +36,7 @@ $conn->close();
   <th>Username </th>
   <th>Password Hash</th>
 <tr>
-</table>
+
 
 <?php
 //loop through all table records
@@ -53,9 +53,7 @@ while($row = $result->fetch_assoc()){
  <td> </td>
 </tr>}
 ?>
-
-
-
+</table>
 
    </body>
  </html>
