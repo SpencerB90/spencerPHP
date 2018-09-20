@@ -46,12 +46,7 @@ while($row = $result->fetch_assoc()){
   echo "<td>" . $row['username'] . "</td>";
   echo "<td>" . $row['password'] . "</td>";
   echo "</tr>";
-}
-  Php loop { <tr>
-   <td> </td>
-  <td> </td>
- <td> </td>
-</tr>}
+}  
 ?>
 </table>
 
