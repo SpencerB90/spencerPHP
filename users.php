@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
 }
 //if username not logged in, will move them to login page
 if (!isset($_SESSION['username'])) {
-  /  header('Location: login.php');
+   header('Location: login.php');
 }
 
 //bring in database connections
@@ -37,7 +37,6 @@ $conn->close();
   <th>Password Hash</th>
 <tr>
 
-
 <?php
 //loop through all table records
 while($row = $result->fetch_assoc()){
@@ -46,9 +45,9 @@ while($row = $result->fetch_assoc()){
   echo "<td>" . $row['username'] . "</td>";
   echo "<td>" . $row['password'] . "</td>";
   echo "</tr>";
-}  
+}
 ?>
 </table>
 
-   </body>
+</body>
  </html>
