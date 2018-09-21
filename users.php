@@ -35,15 +35,32 @@ $conn->close();
   <th>User id </th>
   <th>Username </th>
   <th>Password Hash</th>
+  <th>Actions</th>
 <tr>
 
 <?php
+//using \ before " makes it read a single ', but in html will read as "
 //loop through all table records
 while($row = $result->fetch_assoc()){
   echo "<tr>";
   echo "<td>" . $row['userid'] . "</td>";
   echo "<td>" . $row['username'] . "</td>";
   echo "<td>" . $row['password'] . "</td>";
+  echo "<td>
+  <form action=\"\" method=\"post\">
+    <input name = \"id\" type=\"hidden\" value=\"" . $row['userid'] . "\">
+    <input type =\"submit\" value=\"delete\">
+  </form>  </td>";
+
+//another way to do whats above, you dont need both, will show delete 2 times  
+?>
+<td>
+<form action="" method="post">
+  <input name = "id" type="hidden" value=" <?php echo $row['userid']; ?> ">
+  <input type ="submit" value="delete">
+</form>  </td>";
+
+  <?php
   echo "</tr>";
 }
 ?>
