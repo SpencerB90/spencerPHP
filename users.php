@@ -53,14 +53,14 @@ while($row = $result->fetch_assoc()){
   </form>  </td>";
 
 //another way to do whats above, you dont need both, will show delete 2 times
-?>
-<td>
-<form action="" method="post">
-  <input name = "id" type="hidden" value=" <?php echo $row['userid']; ?> ">
-  <input type ="submit" value="delete">
-</form>  </td>"
-
-  <?php
+// ?>
+// <td>
+// <form action="" method="post">
+//   <input name = "id" type="hidden" value=" <?php echo $row['userid']; ?> ">
+//   <input type ="submit" value="delete">
+// </form>  </td>"
+//
+//   <?php
   echo "</tr>";
 }
 ?>
