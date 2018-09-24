@@ -12,6 +12,13 @@ if (!isset($_SESSION['username'])) {
 //remember if your connection page is named different change
 require('dbConnect.php');
 
+//kill == delete
+if (isset($_POST['id']) && isset($_POST['kill'])){
+  $sql = "DELETE FROM users WHERE userid =" . $_POST['userid'];
+  //exacute Query
+  $result = $conn->query($sql);
+}
+
 //create the sql Query
 $sql = "SELECT * from users;";
 
@@ -41,6 +48,7 @@ $conn->close();
 <?php
 //using \ before " makes it read a single ', but in html will read as "
 //loop through all table records
+//kill == delete
 while($row = $result->fetch_assoc()){
   echo "<tr>";
   echo "<td>" . $row['userid'] . "</td>";
@@ -49,7 +57,7 @@ while($row = $result->fetch_assoc()){
   echo "<td>
   <form action=\"\" method=\"post\">
     <input name = \"id\" type=\"hidden\" value=\"" . $row['userid'] . "\">
-    <input type =\"submit\" value=\"delete\">
+    <input type =\"submit\" value=\"delete\" name=\"kill\">
   </form>  </td>";
 
 
