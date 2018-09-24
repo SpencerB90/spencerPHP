@@ -14,7 +14,7 @@ require('dbConnect.php');
 
 //kill == delete
 if (isset($_POST['id']) && isset($_POST['kill'])){
-  $sql = "DELETE FROM users WHERE userid =" . $_POST['userid'];
+  $sql = "DELETE FROM users WHERE userid =" . $_POST['id'];
   //exacute Query
   $result = $conn->query($sql);
 }
