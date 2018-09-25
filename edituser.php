@@ -14,7 +14,7 @@ if (!isset($_SESSION['username'])) {
 if (isset($_GET['id']) && $_GET['edit']=="edit"){
   require('dbConnect.php'); //bring in database connection
   $sql = "SELECT * FROM users WHERE userid = " . $_GET['id']; // id is int datatype don't qoute it
-  $result-> = $conn->query($sql);
+  $result = $conn->query($sql);
 
   echo "<form action=\"\" method=\"post\">";
 
