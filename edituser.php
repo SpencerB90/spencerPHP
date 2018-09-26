@@ -21,9 +21,7 @@ $password = password_hash($password, PASSWORD_BCRYPT);
 $sql ="UPDATE users where userid = ('$userid') set (username,password) VALUES ('$username','$password') ";
 $conn->query($sql);
 }
-else{
-  echo "wrong!";
-}
+
 
 
 if (isset($_GET['id']) && $_GET['edit']=="edit"){
