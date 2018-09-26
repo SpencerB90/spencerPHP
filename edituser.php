@@ -13,13 +13,16 @@ if (!isset($_SESSION['username'])) {
 
 if (isset($_POST['submit']))
 {
-$userid = $row['userid'];
-$username = $row['username'];
-$password = $row['password'];
+$userid = $_POST['userid'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
 $password = password_hash($password, PASSWORD_BCRYPT);
 $sql ="UPDATE users set (username,password) VALUES ('$username','$password') where userid = ('$userid')";
 $conn->query($sql);
+}
+else{
+  echo "wrong!";
 }
 
 
