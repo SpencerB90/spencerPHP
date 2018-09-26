@@ -32,8 +32,8 @@ echo "</form>";
 
 if (isset($_POST['myAdd']))
 {
-$username = $row['username'];
-$password = $row['password'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
 $password = password_hash($password, PASSWORD_BCRYPT);
 $sql ="UPDATE users (username,password) VALUES ('$username','$password')";
