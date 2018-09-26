@@ -13,6 +13,7 @@ if (!isset($_SESSION['username'])) {
 
 if (isset($_POST['submit']))
 {
+require('dbConnect.php'); //bring in database connection
 $userid = $_POST['userid'];
 $username = $_POST['username'];
 $password = $_POST['password'];
