@@ -11,6 +11,18 @@ if (!isset($_SESSION['username'])) {
   header('Location: login.php'); //if you wanted https address you need full url
 }
 
+if (isset($_POST['submit']))
+{
+$userid = $_POST['userid'];
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$password = password_hash($password, PASSWORD_BCRYPT);
+$sql ="UPDATE users where userid = $userid set (username,password) VALUES ('$username','$password')";
+$conn->query($sql);
+}
+
+
 if (isset($_GET['id']) && $_GET['edit']=="edit"){
   require('dbConnect.php'); //bring in database connection
   $sql = "SELECT * FROM users WHERE userid = " . $_GET['id']; // id is int datatype don't qoute it
@@ -25,7 +37,7 @@ if (isset($_GET['id']) && $_GET['edit']=="edit"){
   echo"<br />";
   echo "<input name=\"password\" type=\"text\" value=\"" . $row['password'] . "\">";
   echo"<br />";
-  echo "<input type=\"submit\" id=\"myAdd\" name=\"submit\" value=\"change\">";
+  echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
   }
 
 echo "</form>";
@@ -35,17 +47,5 @@ else {
   echo "You should not be here.";
 }
 
-if (isset($_POST['myAdd']))
-{
-$userid = $_POST['userid'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-$password = password_hash($password, PASSWORD_BCRYPT);
-$sql ="UPDATE users where userid = $userid set (username,password) VALUES ('$username','$password')";
-$conn->query($sql);
-}
-
-echo '<form action = "users.php" method = "post">';
 
 ?>
