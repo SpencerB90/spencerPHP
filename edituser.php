@@ -27,10 +27,13 @@ if (isset($_GET['id']) && $_GET['edit']=="edit"){
   echo"<br />";
   echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
   }
-  
+
 echo "</form>";
 
 }
 else {
   echo "You should not be here.";
 }
+
+$sql ="UPDATE users (username,password) VALUES ('$username','$password')";
+?>
