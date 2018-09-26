@@ -25,20 +25,26 @@ if (isset($_GET['id']) && $_GET['edit']=="edit"){
   echo"<br />";
   echo "<input name=\"password\" type=\"text\" value=\"" . $row['password'] . "\">";
   echo"<br />";
-  echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
+  echo "<input type=\"submit\" id=\"myAdd\" name=\"submit\" value=\"change\">";
   }
 
 echo "</form>";
 
-}
-else {
-  echo "You should not be here.";
-}
+if (isset($_POST['myAdd']))
+{
 $username = $row['username'];
 $password = $row['password'];
 
 $password = password_hash($password, PASSWORD_BCRYPT);
 $sql ="UPDATE users (username,password) VALUES ('$username','$password')";
 $conn->query($sql);
+}
+
+}
+else {
+  echo "You should not be here.";
+}
+
+
 
 ?>
