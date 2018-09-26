@@ -11,7 +11,16 @@ if (!isset($_SESSION['username'])) {
   header('Location: login.php'); //if you wanted https address you need full url
 }
 
+if (isset($_POST['submit']))
+{
+$userid = $_POST['userid'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
+$password = password_hash($password, PASSWORD_BCRYPT);
+$sql ="UPDATE users where userid = ('$userid') set (username,password) VALUES ('$username','$password')";
+$conn->query($sql);
+}
 
 
 if (isset($_GET['id']) && $_GET['edit']=="edit"){
