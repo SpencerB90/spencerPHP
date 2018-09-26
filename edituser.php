@@ -14,12 +14,12 @@ if (!isset($_SESSION['username'])) {
 if (isset($_POST['submit']))
 {
 require('dbConnect.php'); //bring in database connection
-$userid = $row['userid'];
-$username = $row['username'];
-$password = $row['password'];
+//$userid = $_POST['userid'];
+//$username = $_POST['username'];
+//$password = $_POST['password'];
 
 $password = password_hash($password, PASSWORD_BCRYPT);
-$sql ="UPDATE users set (username,password) VALUES ('$username','$password') where userid = ('$userid')";
+$sql ="UPDATE users set username = '" . $_POST['userid'] . "', password = '". $_POST['password'] ."' where userid = '" . $_POST['userid'] . "'";
 $conn->query($sql);
 }
 
