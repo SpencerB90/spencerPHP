@@ -35,5 +35,8 @@ else {
   echo "You should not be here.";
 }
 
+$password = password_hash($password, PASSWORD_BCRYPT);
 $sql ="UPDATE users (username,password) VALUES ('$username','$password')";
+$conn->query($sql);
+
 ?>
