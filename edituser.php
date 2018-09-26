@@ -30,6 +30,11 @@ if (isset($_GET['id']) && $_GET['edit']=="edit"){
 
 echo "</form>";
 
+}
+else {
+  echo "You should not be here.";
+}
+
 if (isset($_POST['myAdd']))
 {
 $username = $_POST['username'];
@@ -38,11 +43,6 @@ $password = $_POST['password'];
 $password = password_hash($password, PASSWORD_BCRYPT);
 $sql ="UPDATE users set (username,password) VALUES ('$username','$password')";
 $conn->query($sql);
-}
-
-}
-else {
-  echo "You should not be here.";
 }
 
 echo '<form action = "users.php" method = "post">';
