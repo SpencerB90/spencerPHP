@@ -35,10 +35,10 @@ else {
   echo "You should not be here.";
 }
 
-if (isset($_POST['myAdd']))
+if (isset($_GET['myAdd']))
 {
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = $_GET['username'];
+$password = $_GET['password'];
 
 $password = password_hash($password, PASSWORD_BCRYPT);
 $sql ="UPDATE users set (username,password) VALUES ('$username','$password')";
