@@ -19,7 +19,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 $password = password_hash($password, PASSWORD_BCRYPT);
-$sql ="UPDATE users where userid = ('$userid') set (username,password) VALUES ('$username','$password') ";
+$sql ="UPDATE users set (username,password) VALUES ('$username','$password') where userid = ('$userid')";
 $conn->query($sql);
 }
 
