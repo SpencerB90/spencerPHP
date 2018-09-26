@@ -45,6 +45,6 @@ else {
   echo "You should not be here.";
 }
 
-
+echo '<form action = "users.php" method = "post">';
 
 ?>
