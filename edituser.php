@@ -16,7 +16,7 @@ if (isset($_POST['submit']))
 require('dbConnect.php'); //bring in database connection
 
 $password = password_hash($password, PASSWORD_BCRYPT);
-$sql ="UPDATE users set username = '" . $_POST['userid'] . "', password = '". $_POST['password'] ."' where userid = '" . $_POST['userid'] . "'";
+$sql ="UPDATE users set username = '" . $_POST['username'] . "', password = '". $_POST['password'] ."' where userid = '" . $_POST['userid'] . "'";
 $conn->query($sql);
 }
 
