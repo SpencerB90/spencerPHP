@@ -15,9 +15,15 @@ if (isset($_POST['submit']))
 {
 require('dbConnect.php'); //bring in database connection
 
-$_POST['password'] = password_hash($password, PASSWORD_BCRYPT);
-$sql ="UPDATE users set username = '" . $_POST['username'] . "', password = '". $_POST['password'] ."' where userid = '" . $_POST['userid'] . "'";
+$userid = $_POST['userid'];
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$password  = password_hash($password, PASSWORD_BCRYPT);
+
+$sql = "UPDATE users set username = \"$username\", password = \"$password\" Where userid = $userid";
 $conn->query($sql);
+
 }
 
 
@@ -29,7 +35,8 @@ if (isset($_GET['id']) && $_GET['edit']=="edit"){
   echo "<form action=\"\" method=\"post\">";
 
   while ($row = $result->fetch_assoc()){
-  echo "<input name=\"userid\" type=\"text\" disabled value=\"" . $row['userid'] . "\">";
+  //took out name from this one
+  echo "<input type=\"text\" disabled value=\"" . $row['userid'] . "\">";
   //hides value so it can be used
   echo "<input name=\"userid\" type=\"hidden\" value=\"" . $row['userid'] . "\">";
   echo"<br />";
