@@ -23,7 +23,6 @@ $password  = password_hash($password, PASSWORD_BCRYPT);
 
 $sql = "UPDATE users set username = \"$username\", password = \"$password\" Where userid = $userid";
 $conn->query($sql);
-var_dump($result);
 header('location: users.php');
 }
 
