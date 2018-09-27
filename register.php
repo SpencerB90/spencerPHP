@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body>    
 
     <form method="post" action="" >
       username:<input type="text" name="username"><br>

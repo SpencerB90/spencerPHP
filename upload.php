@@ -10,6 +10,25 @@ if (!isset($_SESSION['username'])) {
   //when you use header you need 'location: then where you are going to'
   header('Location: login.php'); //if you wanted https address you need full url
 }
+
+
+<a href = "register.php">Register</a>
+<?php
+if (isset($_SESSION['username'])) {
+echo "<a href =\"upload.php\"> | Upload </a>";
+}
+
+if (isset($_SESSION['username'])) {
+echo "<a href =\"users.php\"> | Users </a>";
+}
+
+ ?>
+
+
+<br />
+
+
+
 //takes whatever this is and tells you about it, good for trouble shooting
 var_dump($_FILES['upload']);
 
