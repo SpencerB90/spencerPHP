@@ -23,16 +23,21 @@ $password  = password_hash($password, PASSWORD_BCRYPT);
 
 $sql = "UPDATE users set username = \"$username\", password = \"$password\" Where userid = $userid";
 $conn->query($sql);
-
+var_dump($result);
+header('location: users.php');
 }
 
+//this works aswell but not as pretty for the if isset above
+//$_POST['password'] = password_hash($password, PASSWORD_BCRYPT);
+//$sql ="UPDATE users set username = '" . $_POST['username'] . "', password = '". $_POST['password'] ."' where userid = '" . $_POST['userid'] . "'";
+//$conn->query($sql);
 
 if (isset($_GET['id']) && $_GET['edit']=="edit"){
   require('dbConnect.php'); //bring in database connection
   $sql = "SELECT * FROM users WHERE userid = " . $_GET['id']; // id is int datatype don't qoute it
   $result = $conn->query($sql);
 
-  echo "<form action=\"\" method=\"post\">";
+  echo "<form action=\"?userid=\" method=\"post\">";
 
   while ($row = $result->fetch_assoc()){
   //took out name from this one
