@@ -1,3 +1,20 @@
+?>
+
+<a href = "register.php">Register</a>
+<?php
+if (isset($_SESSION['username'])) {
+echo "<a href =\"upload.php\"> | Upload </a>";
+}
+
+if (isset($_SESSION['username'])) {
+echo "<a href =\"users.php\"> | Users </a>";
+}
+
+ ?>
+
+
+<br />
+
 <?php
 //checks to see if session is started
 if (!isset($_SESSION)) {
@@ -86,25 +103,6 @@ if ($uploadVerify) {
     move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file);
 }
 }
-
-
- ?>
-
- <a href = "register.php">Register</a>
- <?php
- if (isset($_SESSION['username'])) {
- echo "<a href =\"upload.php\"> | Upload </a>";
- }
-
- if (isset($_SESSION['username'])) {
- echo "<a href =\"users.php\"> | Users </a>";
- }
-
-  ?>
-
-
- <br />
-
 
 
  Upload your file.
