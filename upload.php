@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-
-  </body>
-</html>
-
-<a href = "register.php">Register</a>
-<?php
-if (isset($_SESSION['username'])) {
-echo "<a href =\"upload.php\"> | Upload </a>";
-}
-
-if (isset($_SESSION['username'])) {
-echo "<a href =\"users.php\"> | Users </a>";
-}
-
- ?>
-
-
-<br />
-
 <?php
 //checks to see if session is started
 if (!isset($_SESSION)) {
@@ -38,11 +12,11 @@ if (!isset($_SESSION['username'])) {
 }
 
 //takes whatever this is and tells you about it, good for trouble shooting
-var_dump($_FILES['upload']);
+//var_dump($_FILES['upload']);
 
-echo"<hr />";
+//echo"<hr />";
 //post could have been changed from php 5 to 7
-var_dump($_POST['upload']); //trouble shooting wrong statement
+//var_dump($_POST['upload']); //trouble shooting wrong statement
 
 //use ctrl / to auto comment by line
 
@@ -112,6 +86,25 @@ if ($uploadVerify) {
     move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file);
 }
 }
+
+
+ ?>
+
+ <a href = "register.php">Register</a>
+ <?php
+ if (isset($_SESSION['username'])) {
+ echo "<a href =\"upload.php\"> | Upload </a>";
+ }
+
+ if (isset($_SESSION['username'])) {
+ echo "<a href =\"users.php\"> | Users </a>";
+ }
+
+  ?>
+
+
+ <br />
+
 
 
  Upload your file.
