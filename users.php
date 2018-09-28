@@ -13,23 +13,6 @@ if (!isset($_SESSION['username'])) {
 require('dbConnect.php');
 
 
-<a href = "register.php">Register</a>
-<?php
-if (isset($_SESSION['username'])) {
-echo "<a href =\"upload.php\"> | Upload </a>";
-}
-
-if (isset($_SESSION['username'])) {
-echo "<a href =\"users.php\"> | Users </a>";
-}
-
- ?>
-
-
-<br />
-
-
-
 //kill == delete
 if (isset($_POST['id']) && isset($_POST['kill'])){
   $sql = "DELETE FROM users WHERE userid =" . $_POST['id'];
@@ -53,6 +36,25 @@ $conn->close();
      <title></title>
    </head>
    <body>
+
+
+     <a href = "register.php">Register</a>
+     <?php
+     if (isset($_SESSION['username'])) {
+     echo "<a href =\"upload.php\"> | Upload </a>";
+     }
+
+     if (isset($_SESSION['username'])) {
+     echo "<a href =\"users.php\"> | Users </a>";
+     }
+
+      ?>
+
+
+     <br />
+
+
+
 
 <table>
 <tr>
