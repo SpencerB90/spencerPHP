@@ -17,20 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 
-<?php
-if (isset($_SESSION['username'])) {
-echo "<a href =\"upload.php\"> | Upload </a>";
-}
-
-if (isset($_SESSION['username'])) {
-echo "<a href =\"users.php\"> | Users </a>";
-}
-
- ?>
-
-<br />
-
-
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -39,6 +25,21 @@ echo "<a href =\"users.php\"> | Users </a>";
     <title></title>
   </head>
   <body>
+
+    <a href = "register.php">Register</a>
+    <?php
+    if (isset($_SESSION['username'])) {
+    echo "<a href =\"upload.php\"> | Upload </a>";
+    }
+
+    if (isset($_SESSION['username'])) {
+    echo "<a href =\"users.php\"> | Users </a>";
+    }
+
+     ?>
+
+
+    <br />
 
 
     <form method="post" action="" >
