@@ -29,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <a href = "register.php">Register</a>
     <a href = "login.php"> | Login</a>
     <?php
+    require('dbConnect.php');
+    
     if (isset($_SESSION['username'])) {
     echo "<a href =\"upload.php\"> | Upload </a>";
     }
