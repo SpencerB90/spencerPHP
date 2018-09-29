@@ -14,7 +14,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $conn->query($sql);
   header('location: login.php');
 }
+
 ?>
+
+<?php
+if (isset($_SESSION['username'])) {
+echo "<a href =\"upload.php\"> | Upload </a>";
+}
+
+if (isset($_SESSION['username'])) {
+echo "<a href =\"users.php\"> | Users </a>";
+}
+
+ ?>
+
+<br />
 
 
 
@@ -26,18 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </head>
   <body>
 
-    <?php
-   if (isset($_SESSION['username'])) {
-    echo "<a href =\"upload.php\"> | Upload </a>";
-   }
-
-   if (isset($_SESSION['username'])) {
-    echo "<a href =\"users.php\"> | Users </a>";
-   }
-
-     ?>
-
-    <br />
 
     <form method="post" action="" >
       username:<input type="text" name="username"><br>
