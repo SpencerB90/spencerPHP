@@ -5,7 +5,7 @@ echo (basename($_SERVER['PHP_SELF']) == 'users.php') ? "<a href=users.php><stron
 
 
 
-echo (basename($_SERVER['PHP_SELF']) == 'uploads.php') ? "<a href=uploads.php><strong> Uploads | </strong></a>" : "<a href=uploads.php>Uploads</a>";
+echo (basename($_SERVER['PHP_SELF']) == 'upload.php') ? "<a href=upload.php><strong> Upload | </strong></a>" : "<a href=upload.php>Upload</a>";
 
 
 ?>
