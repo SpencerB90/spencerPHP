@@ -91,13 +91,6 @@ if ($uploadVerify) {
  ?>
 
 
- <?php
- if (isset($_SESSION['username'])) {
-   require('navbar.php');
- }
-
-
-  ?>
 
 
  <br />
