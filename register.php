@@ -31,12 +31,10 @@ session_start();
     <a href = "login.php"> | Login</a>
     <?php
     if (isset($_SESSION['username'])) {
-    echo "<a href =\"upload.php\"> | Upload </a>";
+    require('navbar.php');
     }
 
-    if (isset($_SESSION['username'])) {
-    echo "<a href =\"users.php\"> | Users </a>";
-    }
+
 
      ?>
 
