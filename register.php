@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   header('location: login.php');
 }
 
+session_start();
 ?>
 
 
@@ -28,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <a href = "register.php">Register</a>
     <a href = "login.php"> | Login</a>
-    <?php    
+    <?php
     if (isset($_SESSION['username'])) {
     echo "<a href =\"upload.php\"> | Upload </a>";
     }
