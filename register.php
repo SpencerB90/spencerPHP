@@ -29,15 +29,7 @@ session_start();
 
     <a href = "register.php">Register</a>
     <a href = "login.php"> | Login</a>
-    <?php
-    if (isset($_SESSION['username'])) {
-    require('navbar.php');
-    }
-
-
-
-     ?>
-
+  
 
     <br />
 
