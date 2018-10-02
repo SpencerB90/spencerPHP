@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   //trim any white space from the $username, but not from middle, only beggining and end
   $username = trim($username);
 
-  //remove slashes from $username, no / allowed
+  //remove slashes from $username, no \ allowed
   $username = stripslashes($username);
 
   //remove white space from middle of string
