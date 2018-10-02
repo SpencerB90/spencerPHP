@@ -2,7 +2,24 @@
 //must be in caps!
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   require('dbConnect.php');
+
+  //grab post data. could be dangerous because of xss or sql injection
   $username = $_POST['username'];
+
+  //sanitize the username by removing tags
+  $username = filter_var($username, FILTER_SANITIZE_STRING);
+
+  //trim any white space from the $username, but not from middle, only beggining and end
+  $username = trim($username);
+
+  //remove slashes from $username, no / allowed
+  $username = stripslashes($username);
+
+  //remove white space from middle of string
+  //first parameter ('is string to look for','second is what to replace with', on what)
+  $username = str_replace(' ','',$username);
+
+  //grab post data .. password will be hashed so no need to sanitize
   $password = $_POST['password'];
 
   // password hash wont work on red hat till new version
@@ -29,7 +46,7 @@ session_start();
 
     <a href = "register.php">Register</a>
     <a href = "login.php"> | Login</a>
-  
+
 
     <br />
 
