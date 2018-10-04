@@ -2,7 +2,7 @@
 $cookie_name = "user";
 $cookie_value = "bob";
 
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+//setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 //86400 = 1 day
 
  ?>
@@ -18,10 +18,10 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
      <?php
 
       if (isset($_COOKIE['user'])){
-        echo "you have been here before";
+        echo "Before have you been";
       }
       else{
-        echo "this is your first time here";
+        echo "Here first time, yes";
       }
 
       ?>
