@@ -23,8 +23,10 @@ $cookie_value = "bob";
       else{
         echo "Here first time, yes";
         //can run after html?
-       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+      // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
         //86400 = 1 day
+
+        setcookie($cookie_name, $cookie_value, time() + (60), "/");
       }
 
       ?>
