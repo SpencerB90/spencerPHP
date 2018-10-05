@@ -2,9 +2,7 @@
 
 
 $cookie_name = "user";
-$cookie_value = "here";
-
-
+$cookie_value = "pete";
 
  ?>
 
@@ -22,14 +20,14 @@ $cookie_value = "here";
 
         $visit = $_COOKIE["lastVisit"];
 
-        echo "Welcome back! <br> You last visited on ". $visit) ;
+        echo "Welcome back! <br> You last visited on ". $visit);
         // Tells the user when they last visited if it was over a day ago
       }
       else{
         echo "Here first time, yes";
         //can run after html?
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-        setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30), "/");
+        setcookie($cookie_name, $cookie_value, time() + (60), "/");
+        setcookie('lastVisit', date("G:i - m/d/y"), time() + (60), "/");
         //86400 = 1 day
       }
 
