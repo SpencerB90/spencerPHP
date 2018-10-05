@@ -20,18 +20,16 @@ $cookie_value = "here";
 
       if (isset($_COOKIE["user"])){
 
-        $last = $_COOKIE["lastVisit"]; }
+        $visit = $_COOKIE["lastVisit"];
 
-        $month = (86400 * 30) + time();
-
-        echo "Welcome back! <br> You last visited on ". date("m/d/y",$last) ;
+        echo "Welcome back! <br> You last visited on ". $visit) ;
         // Tells the user when they last visited if it was over a day ago
       }
       else{
         echo "Here first time, yes";
         //can run after html?
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-        setcookie('lastVisit', date("G:i - m/d/y"), time() + (60), "/");
+        setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30), "/");
         //86400 = 1 day
       }
 
