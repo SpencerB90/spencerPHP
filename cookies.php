@@ -11,8 +11,28 @@ $cookie_value = "pete";
   </head>
   <body>
 
-      
 
+    <?php
+
+     if (isset($_COOKIE['user']))
+     {
+
+       $visit = $_COOKIE['lastVisit'];
+
+       echo "Welcome back! <br> You last visited on " . $visit);
+       // Tells the user when they last visited if it was over a day ago
+     }
+     else
+     {
+       echo "Here first time, yes";
+       //can run after html?
+     }
+       date_default_timezone_set('America/New_York');
+       setcookie($cookie_name, $cookie_value, time() + (60), "/");
+       setcookie('lastVisit', date("G:i - m/d/y"), time() + (60), "/");
+       //86400 = 1 day
+
+     ?>
 
 
   </body>
