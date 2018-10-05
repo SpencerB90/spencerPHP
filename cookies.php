@@ -6,7 +6,7 @@ $cookie_value = "pete";
 
  ?>
 
- <!DOCTYPE html>
+ <!-- <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
@@ -37,4 +37,4 @@ $cookie_value = "pete";
 
 
    </body>
- </html>
+ </html> -->
