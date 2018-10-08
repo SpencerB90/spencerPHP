@@ -27,9 +27,8 @@ $cookie_value = "pete";
 
          $since = (($now - $visit) /1);
 
-         </br>
 
-         echo " time since last visit " . $since;
+         echo "<br> time since last visit " . $since;
 
 
        }
