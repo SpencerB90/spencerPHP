@@ -29,10 +29,11 @@ $cookie_value = "pete";
        {
          echo "Here first time, yes";
          //can run after html?
+         date_default_timezone_set('America/New_York');
+         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
        }
 
-       date_default_timezone_set('America/New_York');
-       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
 
      ?>
 
