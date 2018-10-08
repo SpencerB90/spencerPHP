@@ -17,7 +17,7 @@ $cookie_value = "pete";
        {
          date_default_timezone_set('America/New_York');
          $visit = $_COOKIE['lastVisit'];
-         $now = date("G:i - m/d/y");
+         $now = date();
          $then =  $visit;
 
          echo "Welcome back! <br> You last visited on " . $visit;
@@ -25,7 +25,7 @@ $cookie_value = "pete";
 
          $timeDifference =  $now - $then;
 
-         setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30) , "/");
+         setcookie('lastVisit', date(), time() + (86400 * 30) , "/");
          //86400 = 1 day
 
 
