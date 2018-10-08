@@ -18,7 +18,7 @@ $cookie_value = "pete";
 
          $visit = $_COOKIE['lastVisit'];
          $then = $visit;
-         $now = setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+         $now = date("G:i - m/d/y"), "/");
 
          echo "Welcome back! <br> You last visited on " . $visit;
          // Tells the user when they last visited if it was over a day ago
