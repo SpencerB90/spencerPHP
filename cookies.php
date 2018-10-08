@@ -17,7 +17,7 @@ $cookie_value = "pete";
        {
          date_default_timezone_set('America/New_York');
          $visit = $_COOKIE['lastVisit'];
-         $now = date();
+         $now = date("G:i - m/d/y");
          $then =  $visit;
 
          echo "Welcome back! <br> You last visited on " . $visit;
