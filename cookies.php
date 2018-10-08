@@ -15,7 +15,7 @@ $cookie_value = "pete";
     <?php
        if (isset($_COOKIE['user']))
        {
-
+         date_default_timezone_set('America/New_York');
          $visit = $_COOKIE['lastVisit'];
          $now = time();
 
