@@ -21,7 +21,7 @@ $cookie_value = "pete";
          echo "Welcome back! <br> You last visited on " . $visit;
          // Tells the user when they last visited if it was over a day ago
 
-         $change = time () - ($visit - (86400 * 30));
+         $change = time () - $visit;
 
 
          echo " " . $change;
