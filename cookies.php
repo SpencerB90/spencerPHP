@@ -26,7 +26,7 @@ $cookie_value = "pete";
          setcookie('lastVisit', date("G:i - m/d/y"), $then + (86400 * 30), "/");
          //86400 = 1 day
 
-         $since = $now - $then;
+         $since = $now - $visit;
 
          echo " time since last visit " . $since;
 
