@@ -18,15 +18,15 @@ $cookie_value = "pete";
 
          $visit = $_COOKIE['lastVisit'];
          $now = time();
-         $then = time();
+         $adding = 86400 * 30;
 
          echo "Welcome back! <br> You last visited on " . $visit;
          // Tells the user when they last visited if it was over a day ago
 
-         setcookie('lastVisit', date("G:i - m/d/y"), $then + (86400 * 30), "/");
+         setcookie('lastVisit', date("G:i - m/d/y"), time() + $adding  , "/");
          //86400 = 1 day
 
-         $since = (($now - $visit) /86400);
+         $since = (($now - $visit) /1);
 
          echo " time since last visit " . $since;
 
