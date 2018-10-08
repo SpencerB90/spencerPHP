@@ -29,9 +29,10 @@ $cookie_value = "pete";
 
          date_default_timezone_set('America/New_York');
          setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-         setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30), "/");
-         //86400 = 1 day
        }
+
+       setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30), "/");
+       //86400 = 1 day
      ?>
 
 
