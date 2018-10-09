@@ -7,7 +7,6 @@ $cookie_value = date("l jS \of F Y h:i:s A");// l -day of the week
 
 if (isset($_COOKIE['last_visit']))
 {
-  $notification = "Hello again, you seem to like it here.";
   $last_visit = $_COOKIE['last_visit'];
   //$cookie_value = time();
   //$last_visit = $_COOKIE['last_visit'];
