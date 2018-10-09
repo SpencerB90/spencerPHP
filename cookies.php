@@ -17,13 +17,11 @@ $cookie_value = mktime();
        if (isset($_COOKIE['user']))
        {
 
-         $seconds =$_COOKIE['user'];
+         $seconds = $_COOKIE['user'];
          $current = mktime();
          $secondsCalc = ($current - $seconds);
 
          $visit = $_COOKIE['lastVisit'];
-
-         $now = date();
 
          echo "Welcome back! <br> You last visited on " . $visit;
          // Tells the user when they last visited if it was over a day ago
@@ -40,7 +38,7 @@ $cookie_value = mktime();
        {
          echo "Here first time, yes";
          //can run after html?
-         
+
          setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
        }
 
