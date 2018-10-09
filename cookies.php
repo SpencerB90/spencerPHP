@@ -29,7 +29,7 @@ $cookie_value = mktime();
          setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30) , "/");
          //86400 = 1 day
 
-         echo "<br> seconds since last visit " . $secondsCalc;
+         echo "<br> seconds since last visit : " . $secondsCalc;
 
 
        }
@@ -37,7 +37,6 @@ $cookie_value = mktime();
        {
          echo "Here first time, yes";
          //can run after html?
-
 
        }
        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
