@@ -19,7 +19,7 @@ $cookie_value = mktime();
 
          $seconds = $_COOKIE['user'];
          $current = mktime();
-         $secondsCalc = ($current - $seconds);
+         $secondsCalc = $current - $seconds;
 
          $visit = $_COOKIE['lastVisit'];
 
@@ -28,7 +28,6 @@ $cookie_value = mktime();
 
          setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30) , "/");
          //86400 = 1 day
-
 
          echo "<br> seconds since last visit " . $secondsCalc;
 
