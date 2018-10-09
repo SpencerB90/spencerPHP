@@ -17,7 +17,9 @@ $cookie_value = "pete";
        {
          date_default_timezone_set('America/New_York');
          $visit = $_COOKIE['lastVisit'];
-         $now = time("G:i - m/d/y");
+
+         setcookie('nowVisit', date("G:i - m/d/y"),  time(), "/" )
+         $now = $_COOKIE['nowVisit'] ;
 
          echo "Welcome back! <br> You last visited on " . $visit;
          // Tells the user when they last visited if it was over a day ago
@@ -29,7 +31,7 @@ $cookie_value = "pete";
          echo "" . $now;
          echo "" . $visit;
 
-         $since = ($now - $visit) /6000;
+         $since = $now - $visit;
 
 
          echo "<br> seconds since last visit " . $since;
