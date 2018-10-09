@@ -20,7 +20,7 @@ else {
 
 if (isset($_COOKIE['last_visit']))
 {
-  $notification = "Here you were " . (time()- $last_visit / 60) . " seconds ago";
+  $notification = "Here you were " . ((time()- $last_visit) * 60) . " seconds ago";
   // $change = time() - $cookie_value;
   // $visit_time = "Last time you were here " . $change . " seconds ago";
 }
