@@ -18,9 +18,9 @@ $cookie_value = mktime();
        {
 
          $seconds =$_COOKIE['user'];
-       $current = mktime();
-       $secondsCalc = ($current - $seconds);
-         date_default_timezone_set('America/New_York');
+         $current = mktime();
+         $secondsCalc = ($current - $seconds);
+
          $visit = $_COOKIE['lastVisit'];
 
          $now = date();
@@ -32,8 +32,6 @@ $cookie_value = mktime();
          //86400 = 1 day
 
 
-
-
          echo "<br> seconds since last visit " . $secondsCalc;
 
 
@@ -42,7 +40,7 @@ $cookie_value = mktime();
        {
          echo "Here first time, yes";
          //can run after html?
-         date_default_timezone_set('America/New_York');
+         
          setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
        }
 
