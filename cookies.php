@@ -7,20 +7,20 @@ $cookie_value = date("l jS \of F Y h:i:s A");// l -day of the week
 
 if (isset($_COOKIE['last_visit']))
 {
-  $notification = "You have been here within 30 days";
+  $notification = "Hello again, you seem to like it here.";
   $last_visit = $_COOKIE['last_visit'];
   //$cookie_value = time();
   //$last_visit = $_COOKIE['last_visit'];
   setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 }
 else {
-  $notification = "Welcome Mate!!! I see this is your first visit";
+  $notification = "First time visit yes?";
   setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 }
 
 if (isset($_COOKIE['last_visit']))
 {
-  $notification = "Last time you were here Mate was " . (time()- $last_visit) . " seconds ago";
+  $notification = "Here you were " . (time()- $last_visit) . " seconds ago";
   // $change = time() - $cookie_value;
   // $visit_time = "Last time you were here " . $change . " seconds ago";
 }
