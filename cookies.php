@@ -1,6 +1,30 @@
 <?php
-$cookie_name = "user";
-$cookie_value = "pete";
+
+$cookie_name = "last_visit";
+$cookie_value = date("l jS \of F Y h:i:s A");// l -day of the week
+//setcookie($cookie_name,$cookie_value, time() + (86400*30), "/");
+//86400 = 1 day
+
+if (isset($_COOKIE['last_visit']))
+{
+  $notification = "You have been here within 30 days";
+  $last_visit = $_COOKIE['last_visit'];
+  //$cookie_value = time();
+  //$last_visit = $_COOKIE['last_visit'];
+  setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+}
+else {
+  $notification = "Welcome Mate!!! I see this is your first visit";
+  setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+}
+
+if (isset($_COOKIE['last_visit']))
+{
+  $notification = "Last time you were here Mate was " . (time()- $last_visit) . " seconds ago";
+  // $change = time() - $cookie_value;
+  // $visit_time = "Last time you were here " . $change . " seconds ago";
+}
+
  ?>
 
 <!DOCTYPE html>
@@ -10,40 +34,12 @@ $cookie_value = "pete";
     <title></title>
   </head>
   <body>
+    <p>
+      <?php
+          echo $notification;
+          echo ($last_visit != "")? "<br /> Last Visit: " . $last_visit : "";
 
-
-    <?php
-       if (isset($_COOKIE['user']))
-       {
-         date_default_timezone_set('America/New_York');
-         $visit = $_COOKIE['lastVisit'];
-
-         $now = date();
-
-         echo "Welcome back! <br> You last visited on " . $visit;
-         // Tells the user when they last visited if it was over a day ago
-
-         setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30) , "/");
-         //86400 = 1 day
-
-
-         $since = $now - $visit;
-
-
-         echo "<br> seconds since last visit " . $since;
-
-
-       }
-       else
-       {
-         echo "Here first time, yes";
-         //can run after html?
-         date_default_timezone_set('America/New_York');
-         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-       }
-
-     ?>
-
-
+       ?>
+    </p>
   </body>
 </html>
