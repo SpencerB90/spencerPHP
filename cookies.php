@@ -27,10 +27,7 @@ $cookie_value = "pete";
          //86400 = 1 day
 
 
-         echo "" . $now;
-         echo "" . $visit;
-
-         $since = $now - $visit;
+         $since = diff_date ($now, $visit);
 
 
          echo "<br> seconds since last visit " . $since;
