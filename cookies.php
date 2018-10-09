@@ -1,29 +1,7 @@
+
 <?php
-
-$cookie_name = "last_visit";
-$cookie_value = date("l jS \of F Y h:i:s A");// l -day of the week
-//setcookie($cookie_name,$cookie_value, time() + (86400*30), "/");
-//86400 = 1 day
-
-if (isset($_COOKIE['last_visit']))
-{
-  $last_visit = $_COOKIE['last_visit'];
-  //$cookie_value = time();
-  //$last_visit = $_COOKIE['last_visit'];
-  setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-}
-else {
-  $notification = "First time visit yes?";
-  setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-}
-
-if (isset($_COOKIE['last_visit']))
-{
-  $notification = "Here you were " . ((time()- $last_visit) / 60) . " seconds ago";
-  // $change = time() - $cookie_value;
-  // $visit_time = "Last time you were here " . $change . " seconds ago";
-}
-
+$cookie_name = "user";
+$cookie_value = "pete";
  ?>
 
 <!DOCTYPE html>
@@ -33,12 +11,51 @@ if (isset($_COOKIE['last_visit']))
     <title></title>
   </head>
   <body>
-    <p>
-      <?php
-          echo $notification;
-          echo ($last_visit != "")? "<br /> Last Visit: " . $last_visit : "";
 
-       ?>
-    </p>
+
+    <?php
+       if (isset($_COOKIE['user']))
+       {
+         date_default_timezone_set('America/New_York');
+         $visit = $_COOKIE['lastVisit'];
+
+         $now = date();
+
+         echo "Welcome back! <br> You last visited on " . $visit;
+         // Tells the user when they last visited if it was over a day ago
+
+         setcookie('lastVisit', date("G:i - m/d/y"), time() + (86400 * 30) , "/");
+         //86400 = 1 day
+
+
+
+
+         echo "<br> seconds since last visit " . dateDifference();
+
+
+       }
+       else
+       {
+         echo "Here first time, yes";
+         //can run after html?
+         date_default_timezone_set('America/New_York');
+         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+       }
+
+
+       function dateDifference($now , $visit , $differenceFormat = '%s' )
+       {
+      $datetime1 = date_create($now);
+      $datetime2 = date_create($visit);
+
+      $interval = date_diff($datetime1, $datetime2);
+
+      return $interval->format($differenceFormat);
+
+      }
+
+     ?>
+
+
   </body>
 </html>
