@@ -1,7 +1,7 @@
 
 <?php
 $cookie_name = "user";
-$cookie_value = "pete";
+$cookie_value = mktime();
  ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,10 @@ $cookie_value = "pete";
     <?php
        if (isset($_COOKIE['user']))
        {
+
+         $seconds =$_COOKIE['user'];
+       $current = mktime();
+       $secondsCalc = ($current - $seconds);
          date_default_timezone_set('America/New_York');
          $visit = $_COOKIE['lastVisit'];
 
@@ -30,7 +34,7 @@ $cookie_value = "pete";
 
 
 
-         echo "<br> seconds since last visit " . dateDifference();
+         echo "<br> seconds since last visit " . $secondsCalc;
 
 
        }
@@ -42,17 +46,6 @@ $cookie_value = "pete";
          setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
        }
 
-
-       function dateDifference($now , $visit , $differenceFormat = '%s' )
-       {
-      $datetime1 = date_create($now);
-      $datetime2 = date_create($visit);
-
-      $interval = date_diff($datetime1, $datetime2);
-
-      return $interval->format($differenceFormat);
-
-      }
 
      ?>
 
