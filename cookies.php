@@ -1,6 +1,6 @@
 
 <?php
-$cookie_name = "user";
+$cookie_name = "visit";
 $cookie_value = mktime();
  ?>
 
@@ -14,10 +14,10 @@ $cookie_value = mktime();
 
 
     <?php
-       if (isset($_COOKIE['user']))
+       if (isset($_COOKIE['visit']))
        {
 
-         $seconds = $_COOKIE['user'];
+         $seconds = $_COOKIE['visit'];
          $current = mktime();
          $secondsCalc = $current - $seconds;
 
@@ -38,9 +38,9 @@ $cookie_value = mktime();
          echo "Here first time, yes";
          //can run after html?
 
-         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-       }
 
+       }
+       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 
      ?>
 
