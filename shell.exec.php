@@ -14,9 +14,9 @@ $filename = '/var/www/html/spencer/spencerPHP/test';
 
 if (file_exists($filename)) {
     echo "The file $filename";
-    echo "   - exists";
+    echo "<br>- exists";
 } else {
     echo "The file $filename";
-      echo "   - does not exist";
+      echo "<br>- does not exist";
 }
 ?>
