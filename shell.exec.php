@@ -23,6 +23,7 @@ if ($folder){
   }
 }
 else{
+  echo"making test now";
   mkdir("test");
 }
 ?>
