@@ -12,10 +12,11 @@ echo "<pre>$pwd</pre>";
 <?php
 $filename = '/var/www/html/spencer/spencerPHP/test';
 
-echo "";
 if (file_exists($filename)) {
-    echo "The file $filename   - exists";
+    echo "The file $filename";
+    echo "   - exists";
 } else {
-    echo "The file $filename   - does not exist";
+    echo "The file $filename";
+      echo "   - does not exist";
 }
 ?>
