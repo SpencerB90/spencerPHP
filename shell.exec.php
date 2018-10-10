@@ -6,6 +6,7 @@ echo "<pre>$output</pre>";
 $pwd = shell_exec('pwd');
 echo "<pre>$pwd</pre>";
 
+?>
 
 
 <?php
@@ -16,5 +17,4 @@ if (file_exists($filename)) {
 } else {
     echo "The file $filename does not exist";
 }
-?>
 ?>
