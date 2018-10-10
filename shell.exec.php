@@ -12,11 +12,33 @@ echo "<pre>$pwd</pre>";
 <?php
 $filename = '/var/www/html/spencer/spencerPHP/test';
 
+//checks for files and directories
+
+//isdir
+
 if (file_exists($filename)) {
     echo "The file $filename";
     echo "<br>- exists";
 } else {
     echo "The file $filename";
       echo "<br>- does not exist";
+}
+?>
+
+
+<?php
+$folder = file_exists("test");
+
+if ($folder){
+  $folder = is_dir("test");
+  if ($folder) {
+    echo "test exists, and is folder";
+  }
+  else{
+    echo "test exisits and is file";
+  }
+}
+else{
+  mkdir("test");
 }
 ?>
