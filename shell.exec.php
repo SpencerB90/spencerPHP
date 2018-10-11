@@ -40,6 +40,15 @@ else{
 }
 ?>
 
+<?php
+
+$output = shell_exec('w');
+echo "<pre>$output</pre>";
+
+
+
+ ?>
+
 
 
 
