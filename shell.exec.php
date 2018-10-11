@@ -19,9 +19,7 @@ if ($folder){
     echo "test exists, and is folder";
 
     $testArray = scandir("test/");
-
-    echo " " . $testArray;
-
+    
     var_dump($testArray);
 
   }
