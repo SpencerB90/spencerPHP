@@ -20,8 +20,6 @@ if ($folder){
 
     $testArray = scandir("test/");
 
-    var_dump($testArray);
-
     foreach ($testArray as $key=>$value) {
       if ($value == "." || $value == "..") {
         continue;
