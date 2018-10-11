@@ -18,8 +18,10 @@ if ($folder){
   if ($folder) {
     echo "test exists, and is folder" . "</br>"  . "</br>";
 
+    //getting files from folder test
     $testArray = scandir("test/");
 
+    //printing out the array of files
     foreach ($testArray as $key=>$value) {
       if ($value == "." || $value == "..") {
         continue;
@@ -37,6 +39,18 @@ else{
   mkdir("test");
 }
 ?>
+
+<?php
+
+mysql_query("DELETE FROM sessions WHERE time < " . time() - 60);
+
+$result = mysql_query("SELECT * FROM sessions");
+
+while ($row = mysql_fetch_assoc($result)) {
+
+    echo $row['username'] . "<br />";
+}
+ ?>
 
 
 <!-- $filename = '/var/www/html/spencer/spencerPHP/test';
