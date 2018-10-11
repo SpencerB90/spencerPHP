@@ -18,9 +18,11 @@ if ($folder){
   if ($folder) {
     echo "test exists, and is folder";
 
-    foreach (glob("*") as $filename) {
-    echo "$filename size " . filesize($filename) . "\n";
-    }
+    $testArray = scandir("test/");
+
+    echo " " . $testArray;
+
+    var_dump($testArray);
 
   }
   else{
