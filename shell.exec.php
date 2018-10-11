@@ -17,6 +17,11 @@ if ($folder){
   $folder = is_dir("test");
   if ($folder) {
     echo "test exists, and is folder";
+
+    foreach (glob("*") as $filename) {
+    echo "$filename size " . filesize($filename) . "\n";
+    }
+
   }
   else{
     echo "test exisits and is file";
