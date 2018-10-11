@@ -16,7 +16,7 @@ $folder = file_exists("test");
 if ($folder){
   $folder = is_dir("test");
   if ($folder) {
-    echo "test exists, and is folder";
+    echo "test exists, and is folder/n";
 
     $testArray = scandir("test/");
 
