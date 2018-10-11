@@ -26,7 +26,7 @@ if ($folder){
       if ($value == "." || $value == "..") {
         continue;
       }
-      
+      echo $value . "<br/>";
     }
 
   }
