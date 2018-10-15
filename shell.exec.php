@@ -42,8 +42,15 @@ else{
 
 <?php
 
-$output = shell_exec('w');
-echo "<pre>$output</pre>";
+$users = shell_exec('w');
+$usersExplode = explode("\n", $users);
+
+foreach ($usersExplode as $key => $value) {
+  if ($key == "0" || $key == "1") {  continue;  }
+
+$username = substr($value, 0, strrpos($value, ' '));
+echo $username . "<br>"
+}
 
  ?>
 
