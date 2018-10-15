@@ -41,7 +41,7 @@ else{
 ?>
 
 <?php
-echo "</br>"
+echo "</br>";
 
 $users = shell_exec('w');
 $usersExplode = explode("\n", $users);
