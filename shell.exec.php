@@ -50,7 +50,7 @@ foreach ($usersExplode as $key => $value) {
 
 //substr gives portion of a string
 $username = substr($value, 0, strpos($value, ' '));
-echo $username . "<br>"
+echo $username . "<br>";
 }
 
  ?>
