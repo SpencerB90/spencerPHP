@@ -55,6 +55,7 @@ echo $username . "<br>";
 
  ?>
 
+<!-- substr(string, end)  strpos(string, character to find)-->
 
 
 
