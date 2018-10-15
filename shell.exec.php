@@ -46,9 +46,10 @@ $users = shell_exec('w');
 $usersExplode = explode("\n", $users);
 
 foreach ($usersExplode as $key => $value) {
-  if ($key == "0" || $key == "1") {  continue;  }
+  if ($key == "0" || $key == "1") {  continue; }
 
-$username = substr($value, 0, strrpos($value, ' '));
+//substr gives portion of a string
+$username = substr($value, 0, strpos($value, ' '));
 echo $username . "<br>"
 }
 
