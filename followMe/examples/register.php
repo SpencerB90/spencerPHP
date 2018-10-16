@@ -140,7 +140,7 @@ session_start();
 
 
                                 </div>
-                                <form class="register-form">
+                                <form class="register-form" method="post">
                                     <label>Email</label>
                                     username:<input type="text" class="form-control" name="username" placeholder="Email">
 
