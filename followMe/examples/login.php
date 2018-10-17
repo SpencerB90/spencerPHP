@@ -26,7 +26,7 @@
   }// closes POST condition
 
   if (isset($_SESSION['email'])) {
-    header('location: profile.html');
+    header('location: profile.php');
   }
 
 ?>
