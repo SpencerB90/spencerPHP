@@ -4,20 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   require('dbConnect.php');
 
 
-  // //to create the table if it isnt one copied off matts code // unfinished
-  //   $sql = "SELECT * FROM fm_users";
-  //   $checkForTable = $conn->query($sql);
-  //
-  //   if (mysqli_num_rows($checkForTable) < 1) {
-  //     $sql = "CREATE TABLE IF NOT EXISIT fm_users {
-  //     userid INT AUTO_INCREMENT,
-  //     email VARCHAR(225),
-  //     password VARCHAR(255),
-  //     PRIMARY KEY(userid)
-  //     }";  
-  //
-  //     $tableCreate = $conn->query($sql);
-  //  }
+
 
   //grab post data. could be dangerous because of xss or sql injection
   $email = $_POST['email'];
@@ -162,7 +149,7 @@ session_start();
 
                                     <label>Password</label>
                                     <input type="password" class="form-control" name="password" placeholder="Password">
-                                    <button class="btn btn-danger btn-block btn-round">Register</button>
+                                    <button class="btn btn-danger btn-block btn-round">Login</button>
                                 </form>
                                 <div class="forgot">
                                     <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
@@ -171,7 +158,7 @@ session_start();
                         </div>
                     </div>
 					<div class="footer register-footer text-center">
-						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Choas</h6>
 					</div>
                 </div>
         </div>
