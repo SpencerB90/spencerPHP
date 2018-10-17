@@ -1,6 +1,6 @@
 <?php
 //must be in caps!
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  session_start();
   require('dbConnect.php');
 
 
@@ -25,18 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   }// closes POST condition
 
-}
-
-session_start();
+  if (isset($_SESSION['email'])) {
+    header('location: profile.html');
+  }
 
 ?>
 
-<?php
-if (isset($_SESSION['email'])) {
-  header('location: profile.html');
-}
-
- ?>
 
 <!doctype html>
 <html lang="en">
