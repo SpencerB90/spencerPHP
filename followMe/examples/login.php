@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
   if (isset($_POST['email'])){
-    $username = $_POST['email'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
     //SQL statement to execute. surround variables with single qoates
@@ -28,6 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 session_start();
+
+if (isset($_SESSION['email'])) {
+  header('location: profile.html');
+}
+
 ?>
 
 
@@ -40,12 +45,7 @@ session_start();
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  <?php
-  if (isset($_SESSION['email'])) {
-    header('location: profile.html');
-  }
 
-   ?>
 
 	<title>Paper Kit 2 by Chaos</title>
 
