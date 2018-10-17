@@ -78,7 +78,7 @@ if (isset($_SESSION['email'])) {
 	            <a class="navbar-brand" href="https://www.creative-tim.com">Paper Kit 2</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
-	            <!-- <ul class="navbar-nav ml-auto">
+	            <ul class="navbar-nav ml-auto">
 					<li class="nav-item">
 	                    <a href="../index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
 	                </li>
@@ -109,7 +109,7 @@ if (isset($_SESSION['email'])) {
                             <p class="d-lg-none">GitHub</p>
                         </a>
                     </li>
-	            </ul> -->
+	            </ul>
 	        </div>
 		</div>
     </nav>
@@ -121,7 +121,7 @@ if (isset($_SESSION['email'])) {
                         <div class="col-lg-4 ml-auto mr-auto">
                             <div class="card card-register">
                                 <h3 class="title">Login</h3>
-								<div class="social-line text-center">
+								<!-- <div class="social-line text-center">
                                     <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                                         <i class="fa fa-facebook-square"></i>
                                     </a>
@@ -130,7 +130,7 @@ if (isset($_SESSION['email'])) {
                                     </a>
 									<a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
 										<i class="fa fa-twitter"></i>
-									</a>
+									</a> -->
 
 
 
