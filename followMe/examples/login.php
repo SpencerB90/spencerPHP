@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //extracting the returned query information
     while ($row = $result->fetch_assoc()){
-      // $row['username'] is value from database
-      //username & password is the field name in database, use same name and capitalization
+      // $row['email'] is value from database
+      //email & password is the field name in database, use same name and capitalization
       if ($email == $row['email'] && password_verify($password, $row['password']) ){
         $_SESSION['email'] = $email;
       } //closes if statement
@@ -29,13 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 session_start();
 
+?>
+
+<?php 
 if (isset($_SESSION['email'])) {
   header('location: profile.html');
 }
 
-?>
-
-
+ ?>
 
 <!doctype html>
 <html lang="en">
