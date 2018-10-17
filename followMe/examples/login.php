@@ -31,7 +31,7 @@ session_start();
 
 ?>
 
-<?php 
+<?php
 if (isset($_SESSION['email'])) {
   header('location: profile.html');
 }
