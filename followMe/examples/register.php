@@ -4,37 +4,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   require('dbConnect.php');
 
   //grab post data. could be dangerous because of xss or sql injection
-  $username = $_POST['username'];
+  $email = $_POST['email'];
 
   //sanitize the username by removing tags
-  $username = filter_var($username, FILTER_SANITIZE_STRING);
+  $email = filter_var($email, FILTER_SANITIZE_STRING);
 
   //trim any white space from the $username, but not from middle, only beggining and end
-  $username = trim($username);
+  $email = trim($email);
 
   //remove slashes from $username, no \ allowed
   //$username = stripslashes($username);
 
   //try to get rid of / and \ characters
-  $username = str_replace("/","", $username);
-  $username = str_replace("\\","", $username);
+  $email = str_replace("/","", $email);
+  $email = str_replace("\\","", $email);
 
   //remove white space from middle of string
   //first parameter ('is string to look for','second is what to replace with', on what)
   //$username = str_replace(' ','',$username);
 
   //for patterns, to get rid of tabs
-  $username = preg_replace("/\s+/","", $username);
+  $email = preg_replace("/\s+/","", $email);
 
   //grab post data .. password will be hashed so no need to sanitize
-  $password = $_POST['password'];
+  $email = $_POST['password'];
 
   // password hash wont work on red hat till new version
   //MD5 instentanious, bad for security - "rainbow table" = hashed guesses
   //hash is : takes password through algorythem and brings back a hash
   // impossible to reverse! good for security - BCRYPT "salts passwords"
   $password = password_hash($password, PASSWORD_BCRYPT);
-  $sql = "INSERT INTO fm_users (username,password) VALUES ('$username','$password')";
+  $sql = "INSERT INTO fm_users (email,password) VALUES ('$email','$password')";
   $conn->query($sql);
   header('location: login.php');
 }
@@ -142,7 +142,7 @@ session_start();
                                 </div>
                                 <form class="register-form" method="post" action="">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" name="username" placeholder="Email">
+                                    <input type="text" class="form-control" name="email" placeholder="Email">
 
                                     <label>Password</label>
                                     <input type="password" class="form-control" name="password" placeholder="Password">
