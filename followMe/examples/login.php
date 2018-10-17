@@ -25,12 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   }// closes POST condition
 
-
-  if (isset($_SESSION['email'])) {
-    header('location: profile.html');
-  }
-
-
 }
 
 session_start();
@@ -45,6 +39,13 @@ session_start();
 	<link rel="icon" type="image/png" href="../assets/img/favicon.ico">
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <?php
+  if (isset($_SESSION['email'])) {
+    header('location: profile.html');
+  }
+
+   ?>
 
 	<title>Paper Kit 2 by Chaos</title>
 
