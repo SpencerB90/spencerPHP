@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   //     email VARCHAR(225),
   //     password VARCHAR(255),
   //     PRIMARY KEY(userid)
-  //     }";  
+  //     }";
   //
   //     $tableCreate = $conn->query($sql);
   //  }
@@ -22,14 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   //grab post data. could be dangerous because of xss or sql injection
   $email = $_POST['email'];
 
-  //sanitize the username by removing tags
+  //sanitize the email by removing tags
   $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-  //trim any white space from the $username, but not from middle, only beggining and end
+  //trim any white space from the $email, but not from middle, only beggining and end
   $email = trim($email);
 
-  //remove slashes from $username, no \ allowed
-  //$username = stripslashes($username);
+  //remove slashes from $email, no \ allowed
+  //$username = stripslashes($email);
 
   //try to get rid of / and \ characters
   $email = str_replace("/","", $email);
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   //remove white space from middle of string
   //first parameter ('is string to look for','second is what to replace with', on what)
-  //$username = str_replace(' ','',$username);
+  //$username = str_replace(' ','',$email);
 
   //for patterns, to get rid of tabs
   $email = preg_replace("/\s+/","", $email);
