@@ -142,10 +142,10 @@ session_start();
                                 </div>
                                 <form class="register-form" method="post">
                                     <label>Email</label>
-                                    username:<input type="text" class="form-control" name="username" placeholder="Email">
+                                    <input type="text" class="form-control" name="username" placeholder="Email">
 
                                     <label>Password</label>
-                                    password:<input type="password" class="form-control" name="password" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" placeholder="Password">
                                     <button class="btn btn-danger btn-block btn-round">Register</button>
                                 </form>
                                 <div class="forgot">
