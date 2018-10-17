@@ -78,7 +78,7 @@ if (isset($_SESSION['email'])) {
 	            <a class="navbar-brand" href="https://www.creative-tim.com">Paper Kit 2</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
-	            <ul class="navbar-nav ml-auto">
+	            <!-- <ul class="navbar-nav ml-auto">
 					<li class="nav-item">
 	                    <a href="../index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
 	                </li>
@@ -109,7 +109,7 @@ if (isset($_SESSION['email'])) {
                             <p class="d-lg-none">GitHub</p>
                         </a>
                     </li>
-	            </ul>
+	            </ul> -->
 	        </div>
 		</div>
     </nav>
