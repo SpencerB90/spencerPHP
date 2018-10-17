@@ -4,42 +4,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   require('dbConnect.php');
 
 
+  if (isset($_POST['email'])){
+    $username = $_POST['email'];
+    $password = $_POST['password'];
+
+    //SQL statement to execute. surround variables with single qoates
+    $sql = "SELECT email, password FROM fm_users where email = '$email'";
+    //execute sql and return the array to $result
+    $result = $conn->query($sql);
+
+    //extracting the returned query information
+    while ($row = $result->fetch_assoc()){
+      // $row['username'] is value from database
+      //username & password is the field name in database, use same name and capitalization
+      if ($email == $row['email'] && password_verify($password, $row['password']) ){
+        $_SESSION['email'] = $email;
+      } //closes if statement
+
+    } //closes while loop
+
+  }// closes POST condition
 
 
-  //grab post data. could be dangerous because of xss or sql injection
-  $email = $_POST['email'];
 
-  //sanitize the username by removing tags
-  $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-  //trim any white space from the $username, but not from middle, only beggining and end
-  $email = trim($email);
-
-  //remove slashes from $username, no \ allowed
-  //$username = stripslashes($username);
-
-  //try to get rid of / and \ characters
-  $email = str_replace("/","", $email);
-  $email = str_replace("\\","", $email);
-
-  //remove white space from middle of string
-  //first parameter ('is string to look for','second is what to replace with', on what)
-  //$username = str_replace(' ','',$username);
-
-  //for patterns, to get rid of tabs
-  $email = preg_replace("/\s+/","", $email);
-
-  //grab post data .. password will be hashed so no need to sanitize
-  $password = $_POST['password'];
-
-  // password hash wont work on red hat till new version
-  //MD5 instentanious, bad for security - "rainbow table" = hashed guesses
-  //hash is : takes password through algorythem and brings back a hash
-  // impossible to reverse! good for security - BCRYPT "salts passwords"
-  $password = password_hash($password, PASSWORD_BCRYPT);
-  $sql = "INSERT INTO fm_users (email,password) VALUES ('$email','$password')";
-  $conn->query($sql);
-  header('location: login.php');
+  header('location: profile.php');
 }
 
 session_start();
@@ -55,7 +43,7 @@ session_start();
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Paper Kit 2 by Creative Tim</title>
+	<title>Paper Kit 2 by Chaos</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
