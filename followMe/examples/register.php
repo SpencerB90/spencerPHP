@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email = preg_replace("/\s+/","", $email);
 
   //grab post data .. password will be hashed so no need to sanitize
-  $email = $_POST['password'];
+  $password = $_POST['password'];
 
   // password hash wont work on red hat till new version
   //MD5 instentanious, bad for security - "rainbow table" = hashed guesses
