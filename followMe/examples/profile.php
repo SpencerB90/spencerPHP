@@ -180,7 +180,7 @@
                 </nav>
                 <div class="credits ml-auto">
                     <span class="copyright">
-                        © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by chaos
+                        © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Chaos
                     </span>
                 </div>
             </div>
