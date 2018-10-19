@@ -1,4 +1,25 @@
 <?php
+//change paper kit 2 to any name like pofile would work and links to #
+
+//changed nav bar
+
+//things to do to build page
+
+//make sure user is login in
+
+//start session
+
+//uses $_SESSION['email'] to display email in navigation
+
+//edited the profile picture
+//when user logs in it is there picture based off the url
+//modify fm_user in our database to have table picture_url, avitar_url, image_url
+
+//modify fm_user in our database to have tables for first_name and last_name
+
+//modify fm_user to have a title $_SESSION['title'];
+
+//modify fm_user to have description $_SESSION['description'];
 
 
  ?>
@@ -46,11 +67,16 @@
 	                <li class="nav-item">
 	                    <a href="login.php" class="nav-link">Login</a>
 	                </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <?php  echo $_SESSION['email']; ?>
+                      </a>
+                  </li>
 
 	            </ul>
 	        </div>
 		</div>
-    </nav>
+  </nav> <!-- nav bar end-->
 
     <div class="wrapper">
         <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/fabio-mangione.jpg');">
@@ -60,16 +86,16 @@
             <div class="container">
                 <div class="owner">
                     <div class="avatar">
-                        <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                        <img src="<?php echo $_SESSION['image_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive"><!-- image, replaced source-->
                     </div>
                     <div class="name">
-                        <h4 class="title">Jane Faker<br /></h4>
-						<h6 class="description">Music Producer</h6>
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4><!-- first name last name -->
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6> <!-- title-->
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
-                        <p>An artist of considerable range, Jane Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                        <p><?php echo $_SESSION['description']; ?> </p> <!-- description-->
                         <br />
                         <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
                     </div>
