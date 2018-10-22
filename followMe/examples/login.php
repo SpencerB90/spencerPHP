@@ -20,6 +20,11 @@
       if ($email == $row['email'] && password_verify($password, $row['password']) ){
         $_SESSION['email'] = $email;
 
+        $_SESSION['first_name'] = $first_name;
+        $_SESSION['last_name'] = $last_name;
+        $_SESSION['description'] = $description;
+        $_SESSION['title'] = $title;
+        $_SESSION['image_url'] = $image_url;
 
       } //closes if statement
 
