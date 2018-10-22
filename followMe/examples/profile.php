@@ -21,8 +21,12 @@
 
 //modify fm_user to have description $_SESSION['description'];
 
+
+
 session_start();
 require('dbConnect.php');
+
+
 
 
  ?>
