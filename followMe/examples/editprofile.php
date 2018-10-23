@@ -93,19 +93,19 @@ require('dbConnect.php');
                               </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <label>Title</label>
-                                <div class="input-group">
-                                  <span class="input-group-addon">
-                                      <i class="nc-icon nc-single-02"></i>
-                                  </span>
-                                  <input type="text" class="form-control" name="title" placeholder="Name">
-                              </div>
-                            </div>
-
                             <!-- image? -->
 
                         </div><!-- ends row-->
+
+                        <div class="col-md-6">
+                            <label>Title</label>
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                  <i class="nc-icon nc-single-02"></i>
+                              </span>
+                              <input type="text" class="form-control" name="title" placeholder="Name">
+                          </div>
+                        </div>
 
                         <label>Description</label>
                         <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you.."></textarea>
