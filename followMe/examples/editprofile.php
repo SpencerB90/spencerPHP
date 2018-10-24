@@ -26,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
  $email = $_SESSION['email'];
 
   //SQL statement to execute. surround variables with single qoates
-  //$sql = "UPDATE fm_users set first_name = \"$first_name\", last_name = \"$last_name\", description = \"$description\", title = \"$title\" where email = '$email'";
-  $sql = "UPDATE fm_users set first_name = '$first_name' where email = '$email'";
+  $sql = "UPDATE fm_users set first_name = \"$first_name\", last_name = \"$last_name\", description = \"$description\", title = \"$title\" where email = '$email'";
+//  $sql = "UPDATE fm_users set first_name = '$first_name' where email = '$email'";
   //execute sql and return the array to $result
   $result = $conn->query($sql);
 
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
                     <h2 class="text-center">Edit Profle</h2> <!-- turned to edit profil -->
-                    <form class="contact-form" action="" method = ""> <!-- added in action and method-->
+                    <form class="contact-form" action="" method="POST"> <!-- added in action and method-->
                         <div class="row"><!--starts row-->
 
                             <div class="col-md-6">
