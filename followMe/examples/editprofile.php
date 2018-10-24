@@ -99,9 +99,9 @@ require('dbConnect.php');
 
                             <div class="col-md-6">
                                 <label>Title</label>
-                                <div class="col-md-4 ml-auto mr-auto">
+                                <div class="input-group">
                                   <span class="input-group-addon">
-                                      <i class="nc-icon nc-single-02"></i>
+                                      <i class="nc-icon nc-tag-content"></i>
                                   </span>
                                   <input type="text" class="form-control" name="title" placeholder="Title">
                               </div>
