@@ -97,7 +97,7 @@ require('dbConnect.php');
                         </div><!-- ends row-->
 
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label>Title</label>
                                 <div class="input-group">
                                   <span class="input-group-addon">
