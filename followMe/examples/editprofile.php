@@ -26,7 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
  $email = $_SESSION['email'];
 
   //SQL statement to execute. surround variables with single qoates
-  $sql = "UPDATE fm_users set first_name = \"$first_name\", last_name = \"$last_name\", description = \"$description\", title = \"$title\" where email = '$email'";
+  //$sql = "UPDATE fm_users set first_name = \"$first_name\", last_name = \"$last_name\", description = \"$description\", title = \"$title\" where email = '$email'";
+  $sql = "UPDATE fm_users set first_name = '$first_name' where email = '$email'";
   //execute sql and return the array to $result
   $result = $conn->query($sql);
 
