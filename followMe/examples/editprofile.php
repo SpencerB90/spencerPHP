@@ -12,7 +12,7 @@ update submitted values to $_SESSION
 
 */
 
-if (isset($_POST['first_name'])){
+if (isset($_POST[''])){
 
  $first_name = $_POST['first_name'];
  $last_name= $POST['last_name'];
@@ -23,7 +23,7 @@ if (isset($_POST['first_name'])){
   //SQL statement to execute. surround variables with single qoates
   $sql = "UPDATE fm_users set first_name = \"$first_name\", last_name = \"$last_name\", description = \"$description\", title = \"$title\", where email = '$email'";
   //execute sql and return the array to $result
-  $result = $conn->query($sql);       
+  $result = $conn->query($sql);
 
   } //closes while loop
 
@@ -131,7 +131,7 @@ if (isset($_POST['first_name'])){
                             </div>
 
                             <label>Description</label>
-                            <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you.."></textarea>
+                            <textarea class="form-control" rows="4" name="description" placeholder="Tell everyone a little about you.."></textarea>
                             <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto text-center">
                                     <button class="btn btn-danger btn-lg btn-fill">Update</button>
