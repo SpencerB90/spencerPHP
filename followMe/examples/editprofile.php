@@ -1,6 +1,8 @@
 <?php
-session_start();
-require('dbConnect.php');
+if (!isset($_SESSION)) {
+  session_start();
+}
+
 
 //changes
 /*
@@ -12,13 +14,16 @@ update submitted values to $_SESSION
 
 */
 
-if (isset($_POST[''])){
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+  require('dbConnect.php');
 
  $first_name = $_POST['first_name'];
- $last_name= $POST['last_name'];
- $description = $POST['description'];
- $title = $POST['title'];
- $image_url = $POST['image_url'];
+ $last_name= $_POST['last_name'];
+ $description = $_POST['description'];
+ $title = $_POST['title'];
+ //$image_url = $POST['image_url'];
+ $email = $_SESSION['email'];
 
   //SQL statement to execute. surround variables with single qoates
   $sql = "UPDATE fm_users set first_name = \"$first_name\", last_name = \"$last_name\", description = \"$description\", title = \"$title\", where email = '$email'";
