@@ -19,14 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   require('dbConnect.php');
 
  $first_name = $_POST['first_name'];
- $last_name= $_POST['last_name'];
+ $last_name = $_POST['last_name'];
  $description = $_POST['description'];
  $title = $_POST['title'];
  //$image_url = $POST['image_url'];
  $email = $_SESSION['email'];
 
   //SQL statement to execute. surround variables with single qoates
-  $sql = "UPDATE fm_users set first_name = \"$first_name\", last_name = \"$last_name\", description = \"$description\", title = \"$title\", where email = '$email'";
+  $sql = "UPDATE fm_users set first_name = \"$first_name\", last_name = \"$last_name\", description = \"$description\", title = \"$title\" where email = '$email'";
   //execute sql and return the array to $result
   $result = $conn->query($sql);
 
@@ -126,15 +126,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         </div><!-- ends row-->
 
 
-                            <div class="col-md-12">
-                                <label>Title</label>
-                                <div class="input-group">
-                                  <span class="input-group-addon">
-                                      <i class="nc-icon nc-tag-content"></i>
-                                  </span>
-                                  <input type="text" class="form-control" name="title" placeholder="Title">
-                              </div>
+
+                            <label>Title</label>
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                  <i class="nc-icon nc-tag-content"></i>
+                              </span>
+                              <input type="text" class="form-control" name="title" placeholder="Title">
                             </div>
+
 
                             <label>Description</label>
                             <textarea class="form-control" rows="4" name="description" placeholder="Tell everyone a little about you.."></textarea>
