@@ -71,7 +71,7 @@ require('dbConnect.php');
                 <div class="col-md-8 ml-auto mr-auto">
                     <h2 class="text-center">Edit Profle</h2> <!-- turned to edit profil -->
                     <form class="contact-form" action="" method = ""> <!-- added in action and method-->
-                        <div class="row">
+                        <div class="row"><!--starts row-->
 
                             <div class="col-md-6">
                                 <label>First Name</label>
@@ -79,7 +79,7 @@ require('dbConnect.php');
                                   <span class="input-group-addon">
                                       <i class="nc-icon nc-single-02"></i>
                                   </span>
-                                  <input type="text" class="form-control" name="first_name" placeholder="Name">
+                                  <input type="text" class="form-control" name="first_name" placeholder="Last Name">
                               </div>
                             </div>
 
@@ -89,31 +89,38 @@ require('dbConnect.php');
                                   <span class="input-group-addon">
                                       <i class="nc-icon nc-single-02"></i>
                                   </span>
-                                  <input type="text" class="form-control" name="last_name" placeholder="Name">
+                                  <input type="text" class="form-control" name="last_name" placeholder="Last Name">
                               </div>
                             </div>
 
+
+                        </div><!-- ends row-->
+
+                        <div class="row"><!--starts row-->
+
                             <div class="col-md-6">
                                 <label>Title</label>
-                                <div class="input-group">
+                                <div class="col-md-4 ml-auto mr-auto">
                                   <span class="input-group-addon">
                                       <i class="nc-icon nc-single-02"></i>
                                   </span>
-                                  <input type="text" class="form-control" name="title" placeholder="Name">
+                                  <input type="text" class="form-control" name="title" placeholder="Title">
                               </div>
+                            </div>
+
+                            <label>Description</label>
+                            <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you.."></textarea>
+                            <div class="row">
+                                <div class="col-md-4 ml-auto mr-auto">
+                                    <button class="btn btn-danger btn-lg btn-fill">Update</button>
+                                </div>
                             </div>
 
                             <!-- image? -->
 
                         </div><!-- ends row-->
 
-                        <label>Description</label>
-                        <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you.."></textarea>
-                        <div class="row">
-                            <div class="col-md-4 ml-auto mr-auto">
-                                <button class="btn btn-danger btn-lg btn-fill">Update</button>
-                            </div>
-                        </div>
+
                     </form>
                 </div>
             </div>
