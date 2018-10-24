@@ -32,6 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   } //closes while loop
 
+  header('location: profile.php');
+
  ?>
 
 
