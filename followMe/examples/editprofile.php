@@ -96,7 +96,6 @@ require('dbConnect.php');
 
                         </div><!-- ends row-->
 
-                        <div class="row"><!--starts row-->
 
                             <div class="col-md-6">
                                 <label>Title</label>
@@ -118,7 +117,7 @@ require('dbConnect.php');
 
                             <!-- image? -->
 
-                        </div><!-- ends row-->
+
 
 
                     </form>
