@@ -86,9 +86,9 @@ $result = $conn->query($sql);
 						<li>
 							<div class="row">
 								<div class="col-md-2 col-sm-2 ml-auto mr-auto">
-								<!-- image-->	<img src=<?php
+								<!-- image-->	<img src="<?php
 								  echo "<tr>";
-								  echo "<td>" . $row['image_url'] . "</td>";?> alt="Circle Image" class="img-circle img-no-padding img-responsive">
+								  echo "<td>" . $row['image_url'] . "</td>";?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
 								</div>
 								<div class="col-md-7 col-sm-4  ml-auto mr-auto">
 							<!--name-->		<h6><?php echo "<td>" . $row['first_name'] . $row['last_name'] . "</td>"; ?>
