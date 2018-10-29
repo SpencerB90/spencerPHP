@@ -86,9 +86,7 @@ $result = $conn->query($sql);
 						<li>
 							<div class="row">
 								<div class="col-md-2 col-sm-2 ml-auto mr-auto">
-								<!-- image-->	<img src="<?php
-								  echo "<tr>";
-								  echo "<td>" . $row['image_url'] . "</td>";?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+								<!-- image-->	<img src="<?php  echo  $row['image_url']  ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
 								</div>
 								<div class="col-md-7 col-sm-4  ml-auto mr-auto">
 							<!--name-->		<h6><?php echo "<td>" . $row['first_name'] . $row['last_name'] . "</td>"; ?>
@@ -97,8 +95,8 @@ $result = $conn->query($sql);
 								</div>
 								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 									<div class="form-check">
-										<label class="form-check-label">
-											<input class="form-check-input" type="checkbox" value="" checked>
+										<label class="form-check-label"><!--echo if checked only if followed -->
+											<input class="form-check-input" type="checkbox" value="" >
 											<span class="form-check-sign"></span>
 										</label>
 									</div>
