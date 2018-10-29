@@ -11,8 +11,11 @@ if (!isset($_SESSION)) {
 }
 require('dbConnect.php'); //bring in database connection
 
-$fm_users = shell_exec('w');
-$usersExplode = explode("\n", $fm_users);
+//create the sql Query
+$sql = "SELECT * from fm_users;";
+
+//exacute the sql query
+$result = $conn->query($sql);
 
 ?>
 
@@ -79,35 +82,18 @@ $usersExplode = explode("\n", $fm_users);
 			<div class="row">
 				<div class="col-md-6 ml-auto mr-auto">
 					<ul class="list-unstyled follows">
+						 <?php while($row = $result->fetch_assoc()){ ?>
 						<li>
 							<div class="row">
 								<div class="col-md-2 col-sm-2 ml-auto mr-auto">
-								<!-- image-->	<img src=<?php foreach ($usersExplode as $key => $value) {
-									  if ($key == "0" || $key == "1") {  continue; }
-
-									//substr gives portion of a string
-									$image_url = substr($value, 0, strpos($value, ' '));
-
-									echo $image_url "<br>";
-									} ?> alt="Circle Image" class="img-circle img-no-padding img-responsive">
+								<!-- image-->	<img src=<?php
+								  echo "<tr>";
+								  echo "<td>" . $row['image_url'] . "</td>";?> alt="Circle Image" class="img-circle img-no-padding img-responsive">
 								</div>
 								<div class="col-md-7 col-sm-4  ml-auto mr-auto">
-							<!--name-->		<h6><?php foreach ($usersExplode as $key => $value) {
-									  if ($key == "0" || $key == "1") {  continue; }
+							<!--name-->		<h6><?php echo "<td>" . $row['first_name'] . $row['last_name'] . "</td>"; ?>
 
-									//substr gives portion of a string
-									$first_name = substr($value, 0, strpos($value, ' '));
-									$last_name = substr($value, 0, strpos($value, ' '));
-									echo $first_name . $last_name "<br>";
-								} ?>
-
-							<!-- title-->	<br/><small><?php foreach ($usersExplode as $key => $value) {
-									  if ($key == "0" || $key == "1") {  continue; }
-
-									//substr gives portion of a string
-									$title = substr($value, 0, strpos($value, ' '));
-
-									echo $title "<br>";	}  ?></small></h6>
+							<!-- title-->	<br/><small><?php 	echo "<td>" . $row['title'] . "</td>"; ?></small></h6>
 								</div>
 								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 									<div class="form-check">
@@ -120,6 +106,7 @@ $usersExplode = explode("\n", $fm_users);
 							</div>
 						</li>
 						<hr />
+					<?php } ?>
 					</ul>
 				</div>
 			</div>
