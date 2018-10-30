@@ -25,8 +25,7 @@ $following_result = conn->query($sql);
 
 while ($row = $following_result->fetch_row()) {
   $fm_following_user_id[]=$row;
-
-  echo "checked";
+ class="form-check-input"  "checked";
 }
 
 ?>
@@ -108,7 +107,7 @@ while ($row = $following_result->fetch_row()) {
 								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 									<div class="form-check">
 										<label class="form-check-label"><!--echo if checked only if followed -->
-											<input class="form-check-input" type="checkbox" value="" >
+											<input class="form-check-input" type="checkbox" value="">
 											<span class="form-check-sign"></span>
 										</label>
 									</div>
