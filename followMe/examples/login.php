@@ -25,6 +25,7 @@
         $_SESSION['description'] = $row['description'];
         $_SESSION['title'] = $row['title'];
         $_SESSION['image_url'] = $row['image_url'];
+        $_SESSION['user_id'] = $row['user_id'];
 
       } //closes if statement
 
