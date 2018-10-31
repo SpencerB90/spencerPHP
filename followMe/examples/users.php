@@ -31,7 +31,7 @@ while ($row = $following_result->fetch_row()) {
   $check[] = FALSE;
 
   if ($fm_following_user_id[] != 0) {
-    $check[] = TRUE;
+    $check[0] = TRUE;
   }
 }
 
