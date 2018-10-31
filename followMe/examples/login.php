@@ -9,7 +9,7 @@
     $password = $_POST['password'];
 
     //SQL statement to execute. surround variables with single qoates
-    $sql = "SELECT email, password, first_name, last_name, description, title, image_url FROM fm_users where email = '$email'";
+    $sql = "SELECT email, password, first_name, last_name, description, title, image_url, user_id FROM fm_users where email = '$email'";
     //execute sql and return the array to $result
     $result = $conn->query($sql);
 
