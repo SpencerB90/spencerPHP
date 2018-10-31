@@ -11,6 +11,11 @@ if (!isset($_SESSION)) {
 }
 require('dbConnect.php'); //bring in database connection
 
+//create the sql Query
+$sql = "SELECT * from fm_users;";
+//exacute the sql query
+$result = $conn->query($sql);
+
 
 
 ?>
