@@ -16,6 +16,14 @@ $sql = "SELECT * from fm_users;";
 //exacute the sql query
 $result = $conn->query($sql);
 
+//dosent work
+
+$user_id = $_SESSION['user_id'];
+
+$sql ="SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id ='$user_id'";
+
+
+
 
 
 ?>
