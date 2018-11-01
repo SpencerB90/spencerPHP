@@ -1,9 +1,4 @@
 <?php
-//Start Session if it is not running
-//Add name attributes to form elements
-//Set default values for each form element from $_SESSION
-//Update submitted values to database
-//Upldate submitted values to $_SESSION
 
 
 if (!isset($_SESSION)) {
@@ -18,13 +13,19 @@ $result = $conn->query($sql);
 
 $user_id = $_SESSION['user_id'];
 
-//not working
+//different statement
+
+//need post data
+
+//new Follows
+
+//delete follows
+
+
 
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
 $following_result = $conn->query($sql);
-
-//
 
 while ($row = $following_result->fetch_row()) {
 
@@ -111,7 +112,7 @@ while ($row = $following_result->fetch_row()) {
 								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 									<div class="form-check">
 										<label class="form-check-label"><!--echo if checked only if followed -->
-											<input class="form-check-input" type="checkbox" name="tag" value="" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?> >
+											<input class="form-check-input" type="checkbox" name= "<?php $row['user_id'] ?>" value= "<?php $row['user_id'] ?>" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?> >
 											<span class="form-check-sign"></span>
 										</label>
 									</div>
@@ -120,6 +121,9 @@ while ($row = $following_result->fetch_row()) {
 						</li>
 						<hr />
 					<?php } ?>
+
+          <button class="btn btn-danger btn-block btn-round">Submit</button>
+
 					</ul>
 				</div>
 			</div>
