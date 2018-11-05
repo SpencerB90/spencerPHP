@@ -146,7 +146,6 @@ while ($row = $following_result->fetch_row()) {
 			</div>
 		</div>
 
-
 	<footer class="footer section-dark">
         <div class="container">
             <div class="row">
