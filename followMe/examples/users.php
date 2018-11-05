@@ -19,7 +19,7 @@ $result = $conn->query($sql);
 $user_id = $_SESSION['user_id'];
 
 
-$sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
+$sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = 1";
 
 $following_result = $conn->query($sql);
 
