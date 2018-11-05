@@ -11,6 +11,11 @@ if (!isset($_SESSION)) {
 }
 require('dbConnect.php'); //bring in database connection
 
+//for if not logged in
+  if (!isset($_SESSION['email'])){
+    header('location: login.php');
+  }
+
 
 //create the sql Query
 $sql = "SELECT * from fm_users;";
