@@ -18,7 +18,6 @@ $result = $conn->query($sql);
 
 $user_id = $_SESSION['user_id'];
 
-//not working
 
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
@@ -26,7 +25,7 @@ $following_result = $conn->query($sql);
 
 while ($row = $following_result->fetch_row()) {
 
-  $fm_following_user_id[]=$row[0];
+  $fm_following_user_id[] = $row[0];
   }
 
 ?>
