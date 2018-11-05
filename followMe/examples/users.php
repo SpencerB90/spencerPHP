@@ -132,10 +132,8 @@ while($row = $following_result->fetch_row()){
 						</li>
 						<hr />
 					<?php } ?>
-
-          <div class="submit">
               <button class="btn btn-danger btn-block btn-round">Submit</button>
-          </div>
+
 					</ul>
 				</div>
 			</div>
