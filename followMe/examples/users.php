@@ -13,14 +13,34 @@ $result = $conn->query($sql);
 
 $user_id = $_SESSION['user_id'];
 
-//different statement
 
-//need post data
+//i would grab the post data once the button is clicked
+/*
+if (isset($_POST['submit']))
+{
 
-//new Follows
+$userid = $_POST['userid'];
+$followV = $_POST['value'];
 
-//delete follows
+//assign values to each of them and put into an array of following userids
+//hopefully i will be able to grab weither they are checked or unchecked and and put them into sepearte arrays
 
+//i would then use the unchecked array to unfollow any users that i had followed before
+
+//still need to work on how to get those into arrays
+
+$sql = "REMOVE SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
+$conn->query($sql);
+
+//then i would update the userid that are being follwoed into the system
+
+$sql = "UPDATE SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
+$conn->query($sql);
+
+}
+
+//if  that would go well then the statement under would update the page list
+*/
 
 
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
@@ -112,7 +132,7 @@ while ($row = $following_result->fetch_row()) {
 								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 									<div class="form-check">
 										<label class="form-check-label"><!--echo if checked only if followed -->
-											<input class="form-check-input" type="checkbox" name= "<?php $row['user_id'] ?>" value= "<?php $row['user_id'] ?>" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?> >
+											<input class="form-check-input" type="checkbox" name= "<?php $row['user_id'] ?>" value= "" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";} else {echo "unchecked"}?> >
 											<span class="form-check-sign"></span>
 										</label>
 									</div>
