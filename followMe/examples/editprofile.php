@@ -76,23 +76,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                   <a href="login.php" class="nav-link">Login</a>
-               </li>
-                <li class="nav-item">
-                   <a href="profile.php" class="nav-link">Profile</a>
-               </li>
-                <li class="nav-item">
-                   <a href="editprofile.php" class="nav-link">Edit Profile</a>
-               </li>
+	                <li class="nav-item">
+	                    <a href="login.php" class="nav-link">Login</a>
+	                </li>
                   <li class="nav-item">
-                      <a href="users.php" class="nav-link">Users</a>
-                  </li>
-                  <li class="nav-item">
-                   <a href="#" class="nav-link">
-                     <?php echo $_SESSION['email']; ?>
-                   </a>
-               </li>
+                      <a href="#" class="nav-link">
+                        <?php  echo $_SESSION['email']; ?>
+                      </a>
                   </li>
 	            </ul>
 	        </div>
