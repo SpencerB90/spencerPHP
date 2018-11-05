@@ -134,7 +134,7 @@ while($row = $following_result->fetch_row()){
 					<?php } ?>
 
           <div class="submit">
-              <a href="#" class="btn btn-link btn-danger">submit</a>
+              <button class="btn btn-danger btn-block btn-round">Submit</button>
           </div>
 					</ul>
 				</div>
