@@ -18,15 +18,16 @@ $result = $conn->query($sql);
 
 $user_id = $_SESSION['user_id'];
 
+var_dump($user_id);
 
-$sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = 1";
+$sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
 $following_result = $conn->query($sql);
 
-while($row = $following_result->fetch_assoc()){
-
-  //$fm_following_user_id[] = $row[0];
-}
+// while($row = $following_result->fetch_assoc()){
+//
+//   $fm_following_user_id[] = $row[0];
+// }
 
 ?>
 
