@@ -32,8 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 $userID = $_POST['name'];
 $followV = $_POST['value'];
 
-var_dump($followV);
-
 //assign values to each of them and put into an array of following userids
 //hopefully i will be able to grab weither they are checked or unchecked and and put them into sepearte arrays
 
