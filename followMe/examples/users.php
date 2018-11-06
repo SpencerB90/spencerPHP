@@ -25,6 +25,35 @@ $result = $conn->query($sql);
 $user_id = $_SESSION['user_id'];
 
 
+//i would grab the post data once the button is clicked
+/*
+if (isset($_POST['submit']))
+{
+
+$userid = $_POST['userid'];
+$followV = $_POST['value'];
+
+//assign values to each of them and put into an array of following userids
+//hopefully i will be able to grab weither they are checked or unchecked and and put them into sepearte arrays
+
+//i would then use the unchecked array to unfollow any users that i had followed before
+
+//still need to work on how to get those into arrays
+
+$sql = "REMOVE SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
+$conn->query($sql);
+
+//then i would update the userid that are being follwoed into the system
+
+$sql = "UPDATE SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
+$conn->query($sql);
+
+}
+
+//if  that would go well then the statement under would update the page list
+*/
+
+
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
 $following_result = $conn->query($sql);
@@ -107,7 +136,7 @@ while($row = $following_result->fetch_row()){
 			<br />
 
     <form>
-      
+
 			<div class="row">
 				<div class="col-md-6 ml-auto mr-auto">
 					<ul class="list-unstyled follows">
