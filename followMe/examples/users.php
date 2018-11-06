@@ -132,16 +132,16 @@ while($row = $following_result->fetch_row()){
 						</li>
 						<hr />
 					<?php } ?>
-          <div class="row">
-              <div class="col-md-4 ml-auto mr-auto text-center">
-                  <button class="btn btn-danger btn-lg btn-fill">Submit</button>
-              </div>
-          </div>
-
 					</ul>
 				</div>
 			</div>
 		</div>
+
+    <div class="row">
+        <div class="col-md-4 ml-auto mr-auto text-center">
+            <button class="btn btn-danger btn-lg btn-fill">Submit</button>
+        </div>
+    </div>
 
 
 	<footer class="footer section-dark">
