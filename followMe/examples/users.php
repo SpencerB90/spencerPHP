@@ -106,6 +106,8 @@ while($row = $following_result->fetch_row()){
 			<br />
 			<br />
 
+    <form>
+      
 			<div class="row">
 				<div class="col-md-6 ml-auto mr-auto">
 					<ul class="list-unstyled follows">
@@ -135,14 +137,16 @@ while($row = $following_result->fetch_row()){
 					</ul>
 				</div>
 			</div>
+
+
+      <div class="row">
+          <div class="col-md-4 ml-auto mr-auto text-center">
+              <button class="btn btn-danger btn-lg btn-fill">Submit</button>
+          </div>
+      </div>
+
+    </form>
 		</div>
-
-    <div class="row">
-        <div class="col-md-4 ml-auto mr-auto text-center">
-            <button class="btn btn-danger btn-lg btn-fill">Submit</button>
-        </div>
-    </div>
-
 
 	<footer class="footer section-dark">
         <div class="container">
