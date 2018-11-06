@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                   <span class="input-group-addon">
                                       <i class="nc-icon nc-single-02"></i>
                                   </span>
-                                  <input value="<?php echo $_POST['first_name']; ?>" type="text" class="form-control" name="first_name" placeholder="First Name">
+                                  <input value="<?php echo $_SESSION['first_name']; ?>" type="text" class="form-control" name="first_name" placeholder="First Name">
                               </div>
                             </div>
 
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                   <span class="input-group-addon">
                                       <i class="nc-icon nc-single-02"></i>
                                   </span>
-                                  <input value="<?php echo $_POST['last_name']; ?>" type="text" class="form-control" name="last_name" placeholder="Last Name">
+                                  <input value="<?php echo $_SESSION['last_name']; ?>" type="text" class="form-control" name="last_name" placeholder="Last Name">
                               </div>
                             </div>
 
@@ -143,12 +143,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                               <span class="input-group-addon">
                                   <i class="nc-icon nc-tag-content"></i>
                               </span>
-                              <input value="<?php echo $_POST['title']; ?>" type="text" class="form-control" name="title" placeholder="Title">
+                              <input value="<?php echo $_SESSION['title']; ?>" type="text" class="form-control" name="title" placeholder="Title">
                             </div>
 
 
                             <label>Description</label>
-                            <textarea value="<?php echo $_POST['description']; ?>" class="form-control" rows="4" name="description" placeholder="Tell everyone a little about you.."></textarea>
+                            <textarea value="<?php echo $_SESSION['description']; ?>" class="form-control" rows="4" name="description" placeholder="Tell everyone a little about you.."></textarea>
                             <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto text-center">
                                     <button class="btn btn-danger btn-lg btn-fill">Update</button>
