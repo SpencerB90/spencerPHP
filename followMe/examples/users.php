@@ -26,11 +26,10 @@ $user_id = $_SESSION['user_id'];
 
 
 //i would grab the post data once the button is clicked
-/*
-if (isset($_POST['submit']))
-{
 
-$userid = $_POST['userid'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+$userID = $_POST['name'];
 $followV = $_POST['value'];
 
 //assign values to each of them and put into an array of following userids
@@ -40,6 +39,7 @@ $followV = $_POST['value'];
 
 //still need to work on how to get those into arrays
 
+/*
 $sql = "REMOVE SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 $conn->query($sql);
 
@@ -52,7 +52,7 @@ $conn->query($sql);
 
 //if  that would go well then the statement under would update the page list
 */
-
+}
 
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
