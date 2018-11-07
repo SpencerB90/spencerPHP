@@ -24,7 +24,6 @@ $result = $conn->query($sql);
 
 $user_id = $_SESSION['user_id'];
 
-
 //i would grab the post data once the button is clicked
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
