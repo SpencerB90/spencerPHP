@@ -26,12 +26,28 @@ $user_id = $_SESSION['user_id'];
 
 //i would grab the post data once the button is clicked
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-$userID = $_POST['name'];
-$followV = $_POST['value'];
+  while ($row2 = $result->fetch_assoc()) {
 
-var_dump($_POST[$followV]);
+    $userID = $row2['user_id'];
+
+    if ($_POST["$userID"] == "yes") {
+
+      $followID = $row2['user_id'];
+      $sql = "INSERT IGNORE INTO fm_follows(fm_user_id, fm_following_user_id) VALUES ('$userID, $followID')";
+      $conn->query($sql);
+
+    }
+else {
+
+    $followID = $row2['user_id'];
+    $sql = "DELETE FROM fm_follows WHERE fm_user_id = '$userID' AND fm_following_user_id = '$followID'";
+    &conn->query($sql);
+    }
+
+
+  }
 
 //assign values to each of them and put into an array of following userids
 //hopefully i will be able to grab weither they are checked or unchecked and and put them into sepearte arrays
@@ -40,19 +56,12 @@ var_dump($_POST[$followV]);
 
 //still need to work on how to get those into arrays
 
-/*
-$sql = "REMOVE SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
-$conn->query($sql);
 
 //then i would update the userid that are being follwoed into the system
 
-$sql = "UPDATE SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
-$conn->query($sql);
-
-}
 
 //if  that would go well then the statement under would update the page list
-*/
+
 }
 
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
@@ -136,7 +145,7 @@ while($row = $following_result->fetch_row()){
 			<br />
 			<br />
 
-    <form>
+    <form method="post" action="">
 
 			<div class="row">
 				<div class="col-md-6 ml-auto mr-auto">
@@ -155,7 +164,7 @@ while($row = $following_result->fetch_row()){
 								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 									<div class="form-check">
 										<label class="form-check-label"><!--echo if checked only if followed -->
-											<input class="form-check-input" type="checkbox" name="<?php echo $row['user_id'];?>" value="<?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?>" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?> >
+											<input class="form-check-input" type="checkbox" name="<?php echo $row['user_id'];?>" value="yes" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?> >
 											<span class="form-check-sign"></span>
 										</label>
 									</div>
