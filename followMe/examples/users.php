@@ -43,7 +43,7 @@ else {
 
     $followID = $row2['user_id'];
     $sql = "DELETE FROM fm_follows WHERE fm_user_id = '$userID' AND fm_following_user_id = '$followID'";
-    &conn->query($sql);
+    $conn->query($sql);
     }
 
 
