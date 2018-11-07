@@ -18,9 +18,9 @@ require('dbConnect.php'); //bring in database connection
 
 
 //create the sql Query
-$sql = "SELECT * from fm_users;";
+$sql2 = "SELECT * from fm_users;";
 //exacute the sql query
-$result = $conn->query($sql);
+$result2 = $conn->query($sql2);
 
 $user_id = $_SESSION['user_id'];
 
@@ -28,22 +28,22 @@ $user_id = $_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-  while ($row2 = $result->fetch_assoc()) {
+  while ($row2 = $result2->fetch_assoc()) {
 
     $userID = $row2['user_id'];
 
     if ($_POST["$userID"] == "yes") {
 
       $followID = $row2['user_id'];
-      $sql = "INSERT IGNORE INTO fm_follows(fm_user_id, fm_following_user_id) VALUES ('$userID, $followID')";
-      $conn->query($sql);
+      $sql2 = "INSERT IGNORE INTO fm_follows(fm_user_id, fm_following_user_id) VALUES ('$userID, $followID')";
+      $conn->query($sql2);
 
     }
 else {
 
     $followID = $row2['user_id'];
-    $sql = "DELETE FROM fm_follows WHERE fm_user_id = '$userID' AND fm_following_user_id = '$followID'";
-    $conn->query($sql);
+    $sql2 = "DELETE FROM fm_follows WHERE fm_user_id = '$userID' AND fm_following_user_id = '$followID'";
+    $conn->query($sql2);
     }
 
 
@@ -63,6 +63,10 @@ else {
 //if  that would go well then the statement under would update the page list
 
 }
+
+$sql = "SELECT * from fm_users;";
+//exacute the sql query
+$result = $conn->query($sql);
 
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
