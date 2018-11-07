@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     if ($_POST["$userID"] == "yes") {
 
       $followID = $row2['user_id'];
-      $sql2 = "INSERT IGNORE INTO fm_follows(fm_user_id, fm_following_user_id) VALUES ('$userID, $followID')";
+      $sql2 = "INSERT IGNORE INTO fm_follows(fm_user_id, fm_following_user_id) VALUES ('$userID', '$followID')";
       $conn->query($sql2);
 
     }
