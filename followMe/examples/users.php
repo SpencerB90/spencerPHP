@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 else {
 
     $followID = $row2['user_id'];
-    $sql2 = "DELETE FROM fm_follows WHERE fm_user_id = '$userID' AND fm_following_user_id = '$followID'";
+    $sql2 = "DELETE FROM fm_follows WHERE fm_user_id = '$user_id' AND fm_following_user_id = '$followID'";
     $conn->query($sql2);
     }
 
