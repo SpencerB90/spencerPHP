@@ -30,7 +30,7 @@ $user_id = $_SESSION['user_id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 $userID = $_POST['name'];
-$followV = implode("|",$_POST['value']);
+$followV = $_POST['value'];
 
 var_dump($_POST[$followV]);
 
