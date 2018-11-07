@@ -30,9 +30,9 @@ $user_id = $_SESSION['user_id'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 $userID = $_POST['name'];
-$followV = $_POST['value'];
+$followV = implode("|",$_POST['isCheck']);
 
-var_dump($_POST['value']);
+var_dump($_POST[$followV]);
 
 //assign values to each of them and put into an array of following userids
 //hopefully i will be able to grab weither they are checked or unchecked and and put them into sepearte arrays
@@ -156,7 +156,7 @@ while($row = $following_result->fetch_row()){
 								<div class="col-md-3 col-sm-2  ml-auto mr-auto">
 									<div class="form-check">
 										<label class="form-check-label"><!--echo if checked only if followed -->
-											<input class="form-check-input" type="checkbox" name="<?php echo $row['user_id'];?>" value="<?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?>" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?> >
+											<input class="form-check-input" type="checkbox" name="<?php echo $row['user_id'];?>" value="isCheck[<?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?>]" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?> >
 											<span class="form-check-sign"></span>
 										</label>
 									</div>
