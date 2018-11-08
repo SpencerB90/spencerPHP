@@ -46,7 +46,8 @@ else {
     $conn->query($sql2);
     }
 
-
+    // after you add will take you back to profile page
+    header('location: profile.php');
   }
 
 //assign values to each of them and put into an array of following userids
