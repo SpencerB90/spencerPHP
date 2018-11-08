@@ -218,7 +218,7 @@ while($row = $following_result->fetch_row()){
                            </div>
                          </div>
                        </div>
-                     
+
                      <hr />
                    <?php } ?>
                  </div><!-- end following-->
