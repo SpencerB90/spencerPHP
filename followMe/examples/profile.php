@@ -155,7 +155,7 @@ while($row = $following_result->fetch_row()){
                     </div> <!-- end following you-->
 
                     <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of following you-->
-                      <?php while($row = $following_result->fetch_row()){ ?>
+                      <?php while($row = $result->fetch_assoc()){ ?>
 
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
@@ -166,14 +166,7 @@ while($row = $following_result->fetch_row()){
 
                        <!-- title-->	<br/><small><?php 	echo $row['title'] ; ?></small></h6>
                          </div>
-                         <div class="col-md-3 col-sm-2  ml-auto mr-auto">
-                           <div class="form-check">
-                             <label class="form-check-label"><!--echo if checked only if followed -->
-                            	<input class="form-check-input" type="checkbox" name="<?php echo $row['user_id'];?>" value="yes" <?php if (in_array($row['user_id'], $fm_following_user_id)){echo "checked";}?> >
-                               <span class="form-check-sign"></span>
-                             </label>
-                           </div>
-                         </div>
+                    
                        </div>
 
                      <hr />
