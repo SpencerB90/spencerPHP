@@ -32,6 +32,12 @@ $sql = "SELECT * from fm_users;";
 $result = $conn->query($sql);
 
 
+//create the sql Query
+$sql2 = "SELECT * from fm_users;";
+//exacute the sql query
+$result2 = $conn->query($sql2);
+
+
 //setting session user id value
 $user_id = $_SESSION['user_id'];
 
@@ -171,7 +177,7 @@ while($row3 = $following_result->fetch_row()){
 
                     <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of following you-->
 
-                      <?php while($row2 = $result->fetch_assoc()){ ?>
+                      <?php while($row2 = $result2->fetch_assoc()){ ?>
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
                          <!-- image-->	<img src="<?php  echo  $row['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
