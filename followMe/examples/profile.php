@@ -156,7 +156,7 @@ while($row = $following_result->fetch_row()){
 
                     <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of following you-->
 
-                      <?php while($row = $following_result->fetch_assoc()){ ?>
+                      <?php while($row = $following_result->fetch_row()){ ?>
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
                          <!-- image-->	<img src="<?php  echo  $row['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
