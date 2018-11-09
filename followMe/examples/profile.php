@@ -91,7 +91,7 @@ while($row = $following_result->fetch_row()){
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="login.php" class="nav-link">Login</a>
+                    <a href="login.php" class="nav-link">Logout <?php unset($_SESSION['email'] ?></a>
                 </li>
                 <li class="nav-item">
                     <a href="profile.php" class="nav-link">Profile</a>
@@ -110,7 +110,7 @@ while($row = $following_result->fetch_row()){
 	            </ul>
 	    </div>
 		</div>
-  </nav> <!-- nav bar end-->
+  </nav> <!-- nav bar end -->
 
     <div class="wrapper">
         <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/fabio-mangione.jpg');">
