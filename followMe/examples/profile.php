@@ -198,7 +198,7 @@ while($row = $following_result->fetch_row()){
                     </div> <!-- end following you-->
 
                     <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of following you-->
-                      <?php while($row = $following_result->fetch_row()){ ?>
+                      <?php while($row = $result->fetch_assoc()){ ?>
 
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
