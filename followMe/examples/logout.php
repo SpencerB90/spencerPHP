@@ -51,22 +51,22 @@
 					<span class="navbar-toggler-bar"></span>
 	            </button>
 	            <a class="navbar-brand" href="#">Logout</a>
-              <li class="nav-item">
-                  <a href="profile.php" class="nav-link">Profile</a>
-              </li>
-              <li class="nav-item">
-                  <a href="editprofile.php" class="nav-link">Edit Profile</a>
-              </li>
-              <li class="nav-item">
-                    <a href="users.php" class="nav-link">Users</a>
-              </li>
+
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
 					        <li class="nav-item">
-	                    <a href="../index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
+	                    <a href="#" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
 	                </li>
-
+                  <li class="nav-item">
+                      <a href="profile.php" class="nav-link">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="editprofile.php" class="nav-link">Edit Profile</a>
+                  </li>
+                  <li class="nav-item">
+                        <a href="users.php" class="nav-link">Users</a>
+                  </li>
 	            </ul>
 	        </div>
 		</div>
