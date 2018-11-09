@@ -151,11 +151,11 @@ while($row = $following_result->fetch_row()){
                 <!-- Tab panes --> <!-- on profile make following show list of following, dont need checkboxes-->
                 <div class="tab-content following"><!-- start for both-->
                     <div class="tab-pane active" id="follows" role="tabpanel"><!-- start following you-->
-                      
+
                     </div> <!-- end following you-->
 
                     <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of following you-->
-                      <?php while($row = $result->fetch_assoc()){ ?>
+                      <?php while($row = $result->in_array($row['user_id'], $fm_following_user_id){ ?>
 
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
