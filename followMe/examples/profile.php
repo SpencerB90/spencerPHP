@@ -45,16 +45,26 @@ $result2 = $conn->query($sql2);
 $user_id = $_SESSION['user_id'];
 
 
-$sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
+$sql3 = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
-$following_result = $conn->query($sql);
-
+$following_result = $conn->query($sql3);
 
 //indexes of user id's
 while($row3 = $following_result->fetch_row()){
 
   $fm_following_user_id[] = $row3[0];
 }
+
+
+// $sql3 = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
+//
+// $following_result = $conn->query($sql3);
+//
+// //indexes of user id's
+// while($row3 = $following_result->fetch_row()){
+//
+//   $fm_following_user_id[] = $row3[0];
+// }
 
 
  ?>
