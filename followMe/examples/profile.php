@@ -26,45 +26,28 @@
 session_start();
 require('dbConnect.php');
 
+$user_id = $_SESSION['user_id'];
+
+
 //create the sql Query
 $sql = "SELECT * from fm_users;";
 //exacute the sql query
 $result = $conn->query($sql);
 
 
-//create the sql Query
-$sql2 = "SELECT * from fm_users;";
-//exacute the sql query
-$result2 = $conn->query($sql2);
+$sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
-
-
-
-
-//setting session user id value
-$user_id = $_SESSION['user_id'];
-
-
-$sql3 = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
-
-$following_result = $conn->query($sql3);
+$following_result = $conn->query($sql);
 
 //indexes of user id's
-while($row3 = $following_result->fetch_row()){
+while($row = $following_result->fetch_row()){
 
-  $fm_following_user_id[] = $row3[0];
+  $fm_following_user_id[] = $row[0];
 }
 
 
-// $sql3 = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
-//
-// $following_result = $conn->query($sql3);
-//
-// //indexes of user id's
-// while($row3 = $following_result->fetch_row()){
-//
-//   $fm_following_user_id[] = $row3[0];
-// }
+
+?>
 
 
  ?>
@@ -172,25 +155,17 @@ while($row3 = $following_result->fetch_row()){
 
                     <div class="tab-pane active" id="follows" role="tabpanel"><!-- start following you-->
 
-                      <?php while($row = $result->fetch_assoc()){ ?>
-                       <div class="row">
-                         <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                         <!-- image-->	<img src="<?php  echo  $row['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-
-                       <!--name-->		<h6><?php echo $row['first_name'] . $row['last_name'] ; ?>
-
-                       <!-- title-->	<br/><small><?php 	echo $row['title'] ; ?></small></h6>
-                         </div>
-                       </div>
-
-                     <hr />
-                   <?php } ?>
+                    
 
                     </div> <!-- end following you-->
 
-                    <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of following you-->
+                    <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of you following-->
 
-                      <?php while($row2 = $result2->fetch_assoc()){ ?>
+                      <?php while($row = $result->fetch_assoc()){ ?>
+
+                      <?php    $userID = $row['user_id'];
+                     if (in_array($userID, $following_user_ids)) {?>
+
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
                          <!-- image-->	<img src="<?php  echo  $row['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
@@ -201,8 +176,11 @@ while($row3 = $following_result->fetch_row()){
                          </div>
                        </div>
 
+                     <?php } ?>
+
                      <hr />
                    <?php } ?>
+
                  </div><!-- end following-->
 
                 </div><!-- end of following both-->
