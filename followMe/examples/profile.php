@@ -42,9 +42,9 @@ $following_result = $conn->query($sql);
 
 
 //indexes of user id's
-while($row = $following_result->fetch_row()){
+while($row3 = $following_result->fetch_row()){
 
-  $fm_following_user_id[] = $row[0];
+  $fm_following_user_id[] = $row3[0];
 }
 
 
@@ -150,6 +150,7 @@ while($row = $following_result->fetch_row()){
 
                 <!-- Tab panes --> <!-- on profile make following show list of following, dont need checkboxes-->
                 <div class="tab-content following"><!-- start for both-->
+
                     <div class="tab-pane active" id="follows" role="tabpanel"><!-- start following you-->
 
                       <?php while($row = $result->fetch_assoc()){ ?>
