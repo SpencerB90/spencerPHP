@@ -100,7 +100,7 @@ session_start();
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
 					        <li class="nav-item">
-	                    <a href="../index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
+	                    <a href="#" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
 	                </li>
 
 	            </ul>
