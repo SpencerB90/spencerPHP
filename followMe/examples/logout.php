@@ -78,7 +78,7 @@
                     <div class="row">
                         <div class="col-lg-4 ml-auto mr-auto">
                             <div class="card card-register">
-                                <h3 class="title">Logout</h3>
+                                <h3 class="title"><?php echo $_SESSION['email']; ?></h3>
 
                                 <form class="register-form" method="post" action="">
                                     <img src="<?php echo $_SESSION['image_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
