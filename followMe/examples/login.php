@@ -99,21 +99,17 @@
                         <div class="col-lg-4 ml-auto mr-auto">
                             <div class="card card-register">
                                 <h3 class="title">Login</h3>
-								<div class="social-line text-center">
+								                 <!-- <div class="social-line text-center">
                                     <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
                                         <i class="fa fa-facebook-square"></i>
                                     </a>
                                     <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
-									<a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
-										<i class="fa fa-twitter"></i>
-									</a>
-
-
-
-
-                                </div>
+									                  <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
+										                    <i class="fa fa-twitter"></i>
+									                  </a>
+                                  </div> -->
                                 <form class="register-form" method="post" action="">
                                     <label>Email</label>
                                     <input type="text" class="form-control" name="email" placeholder="Email">
@@ -122,16 +118,16 @@
                                     <input type="password" class="form-control" name="password" placeholder="Password">
                                     <button class="btn btn-danger btn-block btn-round">Login</button>
                                 </form>
-                                <div class="forgot">
+                                   <div class="forgot">
                                     <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
-                                </div>
+                                  </div>
                             </div>
                         </div>
                     </div>
-					<div class="footer register-footer text-center">
-						<h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Choas</h6>
-					</div>
-                </div>
+					          <div class="footer register-footer text-center">
+						           <h6>&copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Choas</h6>
+					         </div>
+              </div>
         </div>
     </div>
 </body>
