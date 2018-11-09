@@ -81,7 +81,7 @@
                                 <h3 class="title">Logout</h3>
 
                                 <form class="register-form" method="post" action="">
-
+                                    <img src="<?php echo $_SESSION['image_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                     <button class="btn btn-danger btn-block btn-round">Logout</button>
                                 </form>
                             </div>
