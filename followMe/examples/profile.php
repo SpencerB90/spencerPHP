@@ -38,6 +38,9 @@ $sql2 = "SELECT * from fm_users;";
 $result2 = $conn->query($sql2);
 
 
+
+
+
 //setting session user id value
 $user_id = $_SESSION['user_id'];
 
