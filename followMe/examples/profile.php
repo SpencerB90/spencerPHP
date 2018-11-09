@@ -26,21 +26,20 @@
 session_start();
 require('dbConnect.php');
 
-
-
+//create the sql Query
+$sql = "SELECT * from fm_users;";
+//exacute the sql query
+$result = $conn->query($sql);
 
 
 //setting session user id value
 $user_id = $_SESSION['user_id'];
 
+
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
 $following_result = $conn->query($sql);
 
-//create the sql Query
-$sql = "SELECT * from fm_users WHERE fm_users = $following_result";
-//exacute the sql query
-$result = $conn->query($sql);
 
 //indexes of user id's
 while($row = $following_result->fetch_row()){
@@ -160,11 +159,16 @@ while($row = $following_result->fetch_row()){
                       <?php while($row = $result->fetch_assoc()){ ?>
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                         <!-- image-->	<img src="<?php  echo  $row['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                           <?php if (in_array($row['user_id'], $fm_following_user_id)){echo?>
 
-                       <!--name-->		<h6><?php echo $row['first_name'] . $row['last_name'] ; ?>
+                           <!-- image-->	<img src="<?php  echo  $row['image_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
 
-                       <!-- title-->	<br/><small><?php 	echo $row['title'] ; ?></small></h6>
+                         <!--name-->		<h6><?php echo $row['first_name'] . $row['last_name'] ; ?>
+
+                         <!-- title-->	<br/><small><?php 	echo $row['title'] ; ?></small></h6>
+
+                         <?php ;} ?>
+
                          </div>
                        </div>
 
