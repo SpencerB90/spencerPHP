@@ -35,16 +35,7 @@ $result = $conn->query($sql);
 //setting session user id value
 $user_id = $_SESSION['user_id'];
 
-//follows you
-$sql2 = "SELECT fm_user_id FROM fm_follows WHERE fm_following_user_id = $user_id";
 
-$following_me_result = $conn->query($sql2);
-
-//indexes of user id's
-while($row2 = $following_me_result->fetch_row()){
-
-  $fm_user_id[] = $row[0];
-}
 
 
 
@@ -162,31 +153,7 @@ while($row = $following_result->fetch_row()){
 
                 <!-- Tab panes --> <!-- on profile make following show list of following, dont need checkboxes-->
                 <div class="tab-content following"><!-- start for both-->
-                    <div class="tab-pane active" id="follows" role="tabpanel"><!-- start following you-->
 
-                      <?php while($row = $result->fetch_assoc()){ ?>
-
-                       <div class="row">
-                         <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                         <!-- image-->	<img src="<?php  echo  $row['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                         </div>
-                         <div class="col-md-7 col-sm-4  ml-auto mr-auto">
-                       <!--name-->		<h6><?php echo $row['first_name'] . $row['last_name'] ; ?>
-
-                       <!-- title-->	<br/><small><?php 	echo $row['title'] ; ?></small></h6>
-                         </div>
-                         <div class="col-md-3 col-sm-2  ml-auto mr-auto">
-                           <div class="form-check">
-                             <label class="form-check-label"><!--echo if checked only if followed -->
-                              <input class="form-check-input" type="checkbox" name="<?php echo $row['user_id'];?>" value="yes" <?php if (in_array($row['user_id'], $fm_user_id)){echo "checked";}?> >
-                               <span class="form-check-sign"></span>
-                             </label>
-                           </div>
-                         </div>
-                       </div>
-
-                     <hr />
-                   <?php } ?>
 
                     </div> <!-- end following you-->
 
