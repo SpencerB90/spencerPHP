@@ -159,22 +159,31 @@ while($row = $following_result->fetch_row()){
                       <?php while($row = $result->fetch_assoc()){ ?>
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                           <?php if (in_array($row['user_id'], $fm_following_user_id)){echo?>
+                         <!-- image-->	<img src="<?php  echo  $row['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
 
-                           <!-- image-->	<img src="<?php  echo  $row['image_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                       <!--name-->		<h6><?php echo $row['first_name'] . $row['last_name'] ; ?>
 
-                         <!--name-->		<h6><?php echo $row['first_name'] . $row['last_name'] ; ?>
-
-                         <!-- title-->	<br/><small><?php 	echo $row['title'] ; ?></small></h6>
-
-                         <?php ;} ?>
-
+                       <!-- title-->	<br/><small><?php 	echo $row['title'] ; ?></small></h6>
                          </div>
                        </div>
 
                      <hr />
                    <?php } ?>
                  </div><!-- end following-->
+
+                 <?php while($row = $result->fetch_assoc()){ ?>
+                  <div class="row">
+                    <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                    <!-- image-->	<img src="<?php  echo  $row['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+
+                  <!--name-->		<h6><?php echo $row['first_name'] . $row['last_name'] ; ?>
+
+                  <!-- title-->	<br/><small><?php 	echo $row['title'] ; ?></small></h6>
+                    </div>
+                  </div>
+
+                <hr />
+              <?php } ?>
 
                 </div><!-- end of following both-->
 
