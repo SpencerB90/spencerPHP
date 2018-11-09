@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                   <span class="input-group-addon">
                                       <i class="nc-icon nc-single-02"></i>
                                   </span>
-                                  <input value="<?php echo $_SESSION['first_name']; ?>" type="text" class="form-control" name="first_name" placeholder="First Name">
+                                  <input value="<?php if(!$_POST)(echo $_SESSION['first_name'];) else(echo $_POST['first_name'];) ?>" type="text" class="form-control" name="first_name" placeholder="First Name">
                               </div>
                             </div>
 
