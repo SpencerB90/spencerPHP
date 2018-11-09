@@ -51,6 +51,15 @@
 					<span class="navbar-toggler-bar"></span>
 	            </button>
 	            <a class="navbar-brand" href="#">Logout</a>
+              <li class="nav-item">
+                  <a href="profile.php" class="nav-link">Profile</a>
+              </li>
+              <li class="nav-item">
+                  <a href="editprofile.php" class="nav-link">Edit Profile</a>
+              </li>
+              <li class="nav-item">
+                    <a href="users.php" class="nav-link">Users</a>
+              </li>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
