@@ -35,11 +35,23 @@ $result = $conn->query($sql);
 //setting session user id value
 $user_id = $_SESSION['user_id'];
 
+//follows you
+$sql2 = "SELECT fm_user_id FROM fm_follows WHERE fm_following_user_id = $user_id";
 
+$following_me_result = $conn->query($sql2);
+
+//indexes of user id's
+while($row2 = $following_me_result->fetch_row()){
+
+  $fm_user_id[] = $row[0];
+}
+
+
+
+//following
 $sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
 $following_result = $conn->query($sql);
-
 
 //indexes of user id's
 while($row = $following_result->fetch_row()){
@@ -151,7 +163,7 @@ while($row = $following_result->fetch_row()){
                 <!-- Tab panes --> <!-- on profile make following show list of following, dont need checkboxes-->
                 <div class="tab-content following"><!-- start for both-->
                     <div class="tab-pane active" id="follows" role="tabpanel"><!-- start following you-->
-                        <div class="row">
+                      <!--  <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
 
                                 <ul class="list-unstyled follows">
@@ -194,7 +206,7 @@ while($row = $following_result->fetch_row()){
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>-->
                     </div> <!-- end following you-->
 
                     <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of following you-->
