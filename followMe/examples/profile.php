@@ -52,8 +52,6 @@ $following_me = $conn->query($sql);
 while ($row = $following_me->fetch_row()) {
   $following_me[] = $row[0];
 }
-
-
 ?>
 
 
@@ -162,9 +160,9 @@ while ($row = $following_me->fetch_row()) {
 
                     <div class="tab-pane active" id="follows" role="tabpanel"><!-- start following you-->
 
-                      <?php while($row = $result->fetch_assoc()){ ?>
+                      <?php while($row = $result->fetch_assoc()){
 
-                      <?php    $userID = $row['user_id'];
+                        $userID = $row['user_id'];
 
                      if (in_array($userID, $following_me)) {?>
 
@@ -188,9 +186,9 @@ while ($row = $following_me->fetch_row()) {
 
                     <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of you following-->
 
-                      <?php while($row = $result->fetch_assoc()){ ?>
+                      <?php while($row = $result->fetch_assoc()){
 
-                      <?php    $userID = $row['user_id'];
+                         $userID = $row['user_id'];
 
                      if (in_array($userID, $following_user_ids)) {?>
 
