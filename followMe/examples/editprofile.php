@@ -113,6 +113,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <form class="contact-form" action="" method="POST"> <!-- added in action and method-->
                         <div class="row"><!--starts row-->
 
+                          <!-- edit upload image for profile, /images/userid.jpg // option to edit img-->
+                          <div class="col-md-6">
+                              <label>Profile Picture to edit</label>
+                            <img src="<?php  echo  $_SESSION['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                            </div>
+                          </div>
+
+
                             <div class="col-md-6">
                                 <label>First Name</label>
                                 <div class="input-group">
