@@ -179,7 +179,6 @@ while ($row = $following_me->fetch_row()) {
 
                      <?php } ?>
 
-                     <hr />
                    <?php } ?>
 
 
