@@ -33,6 +33,11 @@ $sql1 = "SELECT * from fm_users;";
 //exacute the sql query
 $result = $conn->query($sql1);
 
+//create the sql Query
+$sql4 = "SELECT * from fm_users;";
+//exacute the sql query
+$result2 = $conn->query($sql4);
+
 
 $sql2 = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
@@ -182,7 +187,7 @@ while ($row = $following_me->fetch_row()) {
 
                     <div class="tab-pane text-center" id="following" role="tabpanel"><!-- list of you following-->
 
-                      <?php while($row = $result->fetch_assoc()){
+                      <?php while($row = $result2->fetch_assoc()){
 
                      if (in_array($row['user_id'], $following_user_ids)) {?>
 
