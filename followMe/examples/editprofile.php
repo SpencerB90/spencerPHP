@@ -149,6 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                             <div class="input-group">
                               <label><p>Title</p></label>
+                            </br>
                               <span class="input-group-addon">
                                   <i class="nc-icon nc-tag-content"></i>
                               </span>
