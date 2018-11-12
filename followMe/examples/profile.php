@@ -202,8 +202,7 @@ while ($row = $following_me->fetch_row()) {
                        </div>
 
                      <?php } ?>
-
-                     <hr />
+                     
                    <?php } ?>
 
                  </div><!-- end following-->
