@@ -146,11 +146,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 
-                            <label>Title</label>
+
                             <div class="input-group">
                               <span class="input-group-addon">
                                   <i class="nc-icon nc-tag-content"></i>
                               </span>
+                                <label>Title</label>
                               <input value="<?php if(!$_POST){echo $_SESSION['title'];} else{echo $_POST['title'];} ?>" type="text" class="form-control" name="title" placeholder="Title">
                             </div>
 
