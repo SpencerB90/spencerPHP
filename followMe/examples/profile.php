@@ -198,10 +198,10 @@ while ($row = $following_me->fetch_row()) {
 
          							<!-- title-->	<br/><small><?php 	echo $row2['title']; ?></small></h6>
 
-                    </hr>
+
          								</div>
                        </div>
-
+                       <hr />
                      <?php } ?>
 
                    <?php } ?>
