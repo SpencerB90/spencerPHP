@@ -130,9 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                   </span>
                                   <input value="<?php if(!$_POST){echo $_SESSION['first_name'];} else{echo $_POST['first_name'];} ?>" type="text" class="form-control" name="first_name" placeholder="First Name">
                               </div>
-                            </div>
-
-                            <div class="col-md-6">
+                            
                                 <label>Last Name</label>
                                 <div class="input-group">
                                   <span class="input-group-addon">
