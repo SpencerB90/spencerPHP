@@ -47,7 +47,7 @@ $sql3 = "SELECT fm_user_id FROM fm_follows WHERE fm_following_user_id = $user_id
 $following_me = $conn->query($sql3);
 
 while ($row = $following_me->fetch_row()) {
-  $following_me[] = $row[0];
+  $following_me_me[] = $row[0];
 }
 ?>
 
@@ -159,7 +159,7 @@ while ($row = $following_me->fetch_row()) {
 
                       <?php while($row = $result->fetch_assoc()){
 
-                     if (in_array($row['user_id'], $following_me)) {?>
+                     if (in_array($row['user_id'], $following_me_me)) {?>
 
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
