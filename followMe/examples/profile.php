@@ -193,10 +193,12 @@ while ($row = $following_me->fetch_row()) {
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
          								<!-- image-->	<img src="<?php  echo  $row2['image_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-         								
+
          							<!--name-->		<h6><?php echo $row2['first_name'] . $row2['last_name']; ?>
 
          							<!-- title-->	<br/><small><?php 	echo $row2['title']; ?></small></h6>
+
+                    </hr>
          								</div>
                        </div>
 
