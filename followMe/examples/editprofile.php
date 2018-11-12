@@ -141,18 +141,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                               </div>
                             </div>
 
-                            <div class="col-md-6">
-                              <label>Title</label>
-                                <div class="input-group">
-                                  <span class="input-group-addon">
-                                      <i class="nc-icon nc-tag-content"></i>
-                                  </span>
-                                  <input value="<?php if(!$_POST){echo $_SESSION['title'];} else{echo $_POST['title'];} ?>" type="text" class="form-control" name="title" placeholder="Title">
-                                </div>
+
+                        </div><!-- ends row-->
+
+                        <div class="col-md-6">
+                          <label>Title</label>
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                  <i class="nc-icon nc-tag-content"></i>
+                              </span>
+                              <input value="<?php if(!$_POST){echo $_SESSION['title'];} else{echo $_POST['title'];} ?>" type="text" class="form-control" name="title" placeholder="Title">
                             </div>
-
-
-                        </div><!-- ends row-->             
+                        </div>           
 
 
                             <label>Description</label>
