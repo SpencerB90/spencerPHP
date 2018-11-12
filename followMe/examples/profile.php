@@ -188,7 +188,7 @@ while ($row = $following_me->fetch_row()) {
 
                       <?php while($row2 = $result2->fetch_assoc()){
 
-                     if (in_array($row2['user_id'], $following_user_id)) {?>
+                     if (in_array($row2['user_id'], $fm_following_user_id)) {?>
 
                        <div class="row">
                          <div class="col-md-2 col-sm-2 ml-auto mr-auto">
