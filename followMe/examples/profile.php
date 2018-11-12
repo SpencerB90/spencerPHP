@@ -29,23 +29,22 @@ require('dbConnect.php');
 $user_id = $_SESSION['user_id'];
 
 //create the sql Query
-$sql = "SELECT * from fm_users;";
+$sql1 = "SELECT * from fm_users;";
 //exacute the sql query
-$result = $conn->query($sql);
+$result = $conn->query($sql1);
 
 
-$sql = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
+$sql2 = "SELECT fm_following_user_id FROM fm_follows WHERE fm_user_id = $user_id";
 
-$following_result = $conn->query($sql);
+$following_result = $conn->query($sql2);
 //indexes of user id's
 while($row = $following_result->fetch_row()){
-
   $fm_following_user_id[] = $row[0];
 }
 
 
-$sql = "SELECT fm_user_id FROM fm_follows WHERE fm_following_user_id = $user_id";
-$following_me = $conn->query($sql);
+$sql3 = "SELECT fm_user_id FROM fm_follows WHERE fm_following_user_id = $user_id";
+$following_me = $conn->query($sql3);
 
 while ($row = $following_me->fetch_row()) {
   $following_me[] = $row[0];
@@ -53,7 +52,7 @@ while ($row = $following_me->fetch_row()) {
 ?>
 
 
- ?>
+
 
 
 <!doctype html>
