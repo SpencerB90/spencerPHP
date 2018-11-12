@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                           <!-- edit upload image for profile, /images/userid.jpg // option to edit img-->
                           <div class="col-md-6">
-                              <label>Profile Picture to edit</label>
+                              <label>Click Profile Picture to Edit</label>
                               <div class="input-group">
                             <img src="<?php  echo  $_SESSION['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                             </div>
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                   </span>
                                   <input value="<?php if(!$_POST){echo $_SESSION['first_name'];} else{echo $_POST['first_name'];} ?>" type="text" class="form-control" name="first_name" placeholder="First Name">
                               </div>
-                            
+
                                 <label>Last Name</label>
                                 <div class="input-group">
                                   <span class="input-group-addon">
