@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                           <div class="col-md-6">
                               <label>Click Profile Picture to Edit</label>
                               <div class="input-group">
-                            <img src="<?php  echo  $_SESSION['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                            <img src="<?php  echo  $_SESSION['image_url'] ; ?>" ahref="imageupload.php" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                             </div>
                           </div>
 
