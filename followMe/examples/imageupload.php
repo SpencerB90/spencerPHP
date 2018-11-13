@@ -4,16 +4,7 @@ if (!isset($_SESSION)) {
 }
 
 
-//changes
-/*
-start session if not
-add name value attributes to form elements
-set default values for each form element for $_SESSION
-update submitted values to database
-update submitted values to $_SESSION
-
-
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 //code for uploading file, will work after post data is sent
 if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
@@ -24,12 +15,12 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
   }
 
   //creates file for individual user, 0777 permissions, true = recursive to create file path
-  if (!file_exists("uploads/" . $_SESSION['username'])) {
-    mkdir("uploads/" . $_SESSION['username'], 0777,true);
+  if (!file_exists("uploads/" . $_SESSION['email'])) {
+    mkdir("uploads/" . $_SESSION['email'], 0777,true);
   }
 
-  // makes upload files for user by username
-  $target_dir = "uploads/" . $_SESSION['username'] . "/";
+  // makes upload files for user by email
+  $target_dir = "uploads/" . $_SESSION['email'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['name']);
 
 $uploadVerify = true;
@@ -50,21 +41,9 @@ switch ($file_type) {
     $uploadVerify = true;
     break;
 
-  case 'image/png':
-    $uploadVerify = true;
-    break;
-
-  case 'image/gif':
-    $uploadVerify = true;
-    break;
-
-  case 'application/pdf':
-    $uploadVerify = true;
-    break;
-
   default:
     $uploadVerify = false;
-    $ret = "sorry only jpeg, gif, png, and pdf files allowed";
+    $ret = "sorry only jpeg files allowed";
     break;
 }
 
@@ -81,15 +60,9 @@ if ($uploadVerify) {
     move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file);
 }
 }
+}
 
 
-
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-  require('dbConnect.php');
-
-*/
 
  ?>
 
