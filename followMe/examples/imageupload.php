@@ -173,9 +173,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <input type="file" name="upload">
                         </br>
                         </br>
-                        <input type="submit">
 
                         </div><!-- ends row-->
+
+                        <div class="row">
+                          <input type="submit">
+                        </div>
 
                     </form>
 
