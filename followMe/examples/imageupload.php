@@ -177,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                         </div><!-- ends row-->
 
                         <div class="row">
-                          <input type="submit">
+                          <button class="btn btn-danger btn-lg btn-fill">Submit</button>
                         </div>
 
                     </form>
