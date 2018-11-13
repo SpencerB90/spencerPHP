@@ -12,7 +12,7 @@ set default values for each form element for $_SESSION
 update submitted values to database
 update submitted values to $_SESSION
 
-*/
+
 
 
 //code for uploading file, will work after post data is sent
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   require('dbConnect.php');
 
-
+*/
 
  ?>
 
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>profile by chaos</title>
+	<title>by chaos</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="#">Edit Profile</a>
+	            <a class="navbar-brand" href="#">Edit Picture</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
