@@ -22,7 +22,7 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
 
   // makes upload files for user by user id
   $target_dir = "../assets/img/uploads/" . $_SESSION['user_id'] . "/";
-  $target_file = $target_dir . basename($_FILES['upload']['user_id']);
+  $target_file = $target_dir . basename($_FILES['upload']['name']);
 
 $uploadVerify = true;
 
