@@ -4,8 +4,6 @@ if (!isset($_SESSION)) {
 }
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
 //code for uploading file, will work after post data is sent
 if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
   //check to if uploads folder exists
@@ -19,9 +17,9 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
     mkdir("uploads/" . $_SESSION['email'], 0777,true);
   }
 
-  // makes upload files for user by email
+  // makes upload files for user by user id
   $target_dir = "uploads/" . $_SESSION['email'] . "/";
-  $target_file = $target_dir . basename($_FILES['upload']['name']);
+  $target_file = $target_dir . basename($_FILES['upload']['user_id']);
 
 $uploadVerify = true;
 
@@ -60,9 +58,8 @@ if ($uploadVerify) {
     move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file);
 }
 }
-}
 
-
+  $sql = "UPDATE fm_users set image_url = \"$target_file\" where email = '$email'";
 
  ?>
 
