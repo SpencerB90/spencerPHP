@@ -63,7 +63,7 @@ if ($uploadVerify) {
 }
 
   $sql = "UPDATE fm_users set image_url = \"$target_file\" where email = '$email'";
-
+  $conn->query($sql);
  ?>
 
 
