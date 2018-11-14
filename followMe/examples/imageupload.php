@@ -3,6 +3,9 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
+require('dbConnect.php');
+
+$email = $_SESSION['email'];
 
 //code for uploading file, will work after post data is sent
 if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
