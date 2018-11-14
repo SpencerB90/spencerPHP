@@ -140,7 +140,7 @@ if ($uploadVerify) {
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
                     <h2 class="text-center">Image Upload</h2> <!-- turned to edit profil -->
-                    <form class="contact-form" action="" method="POST"> <!-- added in action and method-->
+                    <form class="contact-form" action="" method="POST" enctype="multipart/form-data"> <!-- added in action and method-->
                         <div class="row"><!--starts row-->
 
                         <input type="file" name="upload">
