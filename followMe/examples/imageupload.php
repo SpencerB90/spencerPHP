@@ -58,7 +58,7 @@ if ($_FILES['upload']['size'] > 1000000 ) {
 //if set value has value can be used as true w/o conditions
 if ($uploadVerify) {
   //moves files
-    move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file);
+    move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
 }
 }
 
