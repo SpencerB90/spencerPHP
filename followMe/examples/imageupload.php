@@ -10,18 +10,18 @@ $email = $_SESSION['email'];
 //code for uploading file, will work after post data is sent
 if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
   //check to if uploads folder exists
-  if (!file_exists("uploads")){
+  if (!file_exists("../assets/img/uploads/")){
     //if uploads folder(directory) dose not exist create it
-    mkdir("uploads/");
+    mkdir("../assets/img/uploads/");
   }
 
   //creates file for individual user, 0777 permissions, true = recursive to create file path
-  if (!file_exists("uploads/" . $_SESSION['user_id'])) {
-    mkdir("uploads/" . $_SESSION['user_id'], 0777,true);
+  if (!file_exists("../assets/img/uploads/" . $_SESSION['user_id'])) {
+    mkdir("../assets/img/uploads/" . $_SESSION['user_id'], 0777,true);
   }
 
   // makes upload files for user by user id
-  $target_dir = "uploads/" . $_SESSION['user_id'] . "/";
+  $target_dir = "../assets/img/uploads/" . $_SESSION['user_id'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['user_id']);
 
 $uploadVerify = true;
