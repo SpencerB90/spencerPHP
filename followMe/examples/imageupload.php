@@ -16,12 +16,12 @@ if (isset($_FILES['upload']) ){ //could use != null after ] instead of isset
   }
 
   //creates file for individual user, 0777 permissions, true = recursive to create file path
-  if (!file_exists("uploads/" . $_SESSION['email'])) {
-    mkdir("uploads/" . $_SESSION['email'], 0777,true);
+  if (!file_exists("uploads/" . $_SESSION['user_id'])) {
+    mkdir("uploads/" . $_SESSION['user_id'], 0777,true);
   }
 
   // makes upload files for user by user id
-  $target_dir = "uploads/" . $_SESSION['email'] . "/";
+  $target_dir = "uploads/" . $_SESSION['user_id'] . "/";
   $target_file = $target_dir . basename($_FILES['upload']['user_id']);
 
 $uploadVerify = true;
