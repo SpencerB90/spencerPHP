@@ -66,6 +66,9 @@ if ($uploadVerify) {
   $conn->query($sql);
 
   $_SESSION['image_url'] = $target_file;
+
+  header('location: profile.php');
+
  ?>
 
 
