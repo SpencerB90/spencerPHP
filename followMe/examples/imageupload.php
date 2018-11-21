@@ -67,7 +67,9 @@ if ($uploadVerify) {
 
   $_SESSION['image_url'] = $target_file;
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   header('location: profile.php');
+}
 
  ?>
 
