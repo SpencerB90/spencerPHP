@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                           <!-- edit upload image for profile, /images/userid.jpg // option to edit img-->
                           <div class="col-md-6">
-                              <a href="imageupload.php">Click to Edit Profile Picture</a>
+                              <a href="imageupload.php">Click Here to Edit Profile Picture</a>
                               <div class="input-group">
                             <img src="<?php  echo  $_SESSION['image_url'] ; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                             </div>
